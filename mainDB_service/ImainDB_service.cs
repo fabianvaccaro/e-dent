@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using mainDB_service.objectClasses;
 
 namespace mainDB_service
 {
@@ -17,5 +18,16 @@ namespace mainDB_service
         [OperationContract]
         String getUsername(Int32 ID);
 
+        [OperationContract]
+        void createUser(String username, String passwd, String role, String institution);
+
+        [OperationContract]
+        bool patienExists(Int32 ID);
+
+        [OperationContract]
+        bool dniExists(String DNI);
+
+        [OperationContract]
+        K_Patient getPatient(Int32 ID);
     }
 }

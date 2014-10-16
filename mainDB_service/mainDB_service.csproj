@@ -108,6 +108,7 @@
     <Compile Include="medicines.cs">
       <DependentUpon>mainDB_service_sqlmodel.tt</DependentUpon>
     </Compile>
+    <Compile Include="objectClasses\K_Patient.cs" />
     <Compile Include="operators.cs">
       <DependentUpon>mainDB_service_sqlmodel.tt</DependentUpon>
     </Compile>

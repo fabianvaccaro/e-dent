@@ -1,0 +1,696 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="cdentalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__RefactorLog">
+          <Key>
+            <PropertyRef Name="OperationKey" />
+          </Key>
+          <Property Name="OperationKey" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="clinical_history">
+          <Key>
+            <PropertyRef Name="ch_code" />
+          </Key>
+          <Property Name="ch_code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ch_pacid" Type="int" Nullable="false" />
+          <Property Name="ch_operator" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ch_interrog" Type="nvarchar(max)" />
+          <Property Name="ch_regdate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ensurance">
+          <Key>
+            <PropertyRef Name="en_code" />
+          </Key>
+          <Property Name="en_code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="en_type" Type="nvarchar" MaxLength="10" />
+          <Property Name="en_name" Type="nvarchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="images">
+          <Key>
+            <PropertyRef Name="img_id" />
+          </Key>
+          <Property Name="img_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="img_group" Type="int" />
+          <Property Name="img_rgb" Type="image" />
+        </EntityType>
+        <EntityType Name="institutions">
+          <Key>
+            <PropertyRef Name="ins_id" />
+          </Key>
+          <Property Name="ins_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ins_name" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="ins_type" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="medicines">
+          <Key>
+            <PropertyRef Name="med_id" />
+          </Key>
+          <Property Name="med_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="med_composition" Type="nvarchar" MaxLength="64" />
+          <Property Name="med_commercial" Type="nvarchar" MaxLength="64" />
+          <Property Name="med_dose" Type="real" />
+          <Property Name="med_weightdoserelation" Type="real" />
+          <Property Name="med_presentation" Type="nvarchar" MaxLength="32" />
+          <Property Name="med_age" Type="real" />
+          <Property Name="med_type" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="operators">
+          <Key>
+            <PropertyRef Name="op_id" />
+          </Key>
+          <Property Name="op_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="op_names" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="op_lastn" Type="nvarchar" MaxLength="64" Nullable="false" />
+          <Property Name="op_phone1" Type="char" MaxLength="16" />
+          <Property Name="op_phone2" Type="char" MaxLength="10" />
+          <Property Name="op_email" Type="nvarchar" MaxLength="32" />
+          <Property Name="op_address" Type="nvarchar" MaxLength="256" />
+          <Property Name="op_graddate" Type="datetime" />
+          <Property Name="op_stdlvl" Type="nvarchar" MaxLength="64" />
+          <Property Name="op_ingdate" Type="date" />
+        </EntityType>
+        <EntityType Name="operators_stats">
+          <Key>
+            <PropertyRef Name="os_id" />
+          </Key>
+          <Property Name="os_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="os_opid" Type="int" Nullable="false" />
+          <Property Name="os_spid" Type="int" Nullable="false" />
+          <Property Name="os_speed" Type="int" Nullable="false" />
+          <Property Name="os_presition" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pathologies">
+          <Key>
+            <PropertyRef Name="thos_id" />
+          </Key>
+          <Property Name="thos_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="thos_type" Type="nvarchar" MaxLength="10" />
+          <Property Name="thos_name" Type="nvarchar" MaxLength="32" />
+          <Property Name="thos_risk" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="patient">
+          <Key>
+            <PropertyRef Name="pac_id" />
+          </Key>
+          <Property Name="pac_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pac_ced" Type="nvarchar" MaxLength="12" />
+          <Property Name="pac_name" Type="nvarchar" MaxLength="64" />
+          <Property Name="pac_lastn" Type="nvarchar" MaxLength="64" />
+          <Property Name="pac_born" Type="date" />
+          <Property Name="pac_race" Type="nvarchar" MaxLength="10" />
+          <Property Name="pac_phone1" Type="char" MaxLength="12" />
+          <Property Name="pac_phone2" Type="char" MaxLength="12" />
+          <Property Name="pac_address" Type="nvarchar" MaxLength="256" />
+          <Property Name="pac_job" Type="nvarchar" MaxLength="64" />
+          <Property Name="pac_school" Type="nvarchar" MaxLength="64" />
+          <Property Name="pac_ensur" Type="nvarchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="patient_record">
+          <Key>
+            <PropertyRef Name="pr_id" />
+          </Key>
+          <Property Name="pr_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pr_pacid" Type="int" Nullable="false" />
+          <Property Name="pr_chid" Type="int" Nullable="false" />
+          <Property Name="pr_patid" Type="int" Nullable="false" />
+          <Property Name="pr_dentalloc" Type="nvarchar" MaxLength="10" />
+          <Property Name="pr_facialloc" Type="nvarchar" MaxLength="10" />
+          <Property Name="pr_gravity" Type="int" />
+          <Property Name="pr_prevtreat" Type="nvarchar" MaxLength="256" />
+          <Property Name="pr_medic" Type="nvarchar" MaxLength="256" />
+          <Property Name="pr_regdate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="payment_history">
+          <Key>
+            <PropertyRef Name="pay_id" />
+          </Key>
+          <Property Name="pay_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pay_pacid" Type="int" Nullable="false" />
+          <Property Name="pay_rvid" Type="int" />
+          <Property Name="pay_amount" Type="real" />
+          <Property Name="pay_date" Type="datetime" Nullable="false" />
+          <Property Name="pay_mode" Type="nvarchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="procedures">
+          <Key>
+            <PropertyRef Name="pr_id" />
+          </Key>
+          <Property Name="pr_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pr_pacid" Type="int" Nullable="false" />
+          <Property Name="pr_opid" Type="int" Nullable="false" />
+          <Property Name="pr_tmid" Type="int" />
+          <Property Name="pr_trid" Type="int" Nullable="false" />
+          <Property Name="pr_observations" Type="text" />
+          <Property Name="pr_plandate" Type="datetime" />
+          <Property Name="pr_procdate" Type="datetime" />
+          <Property Name="pr_status" Type="nvarchar" MaxLength="10" />
+          <Property Name="pr_genprice" Type="real" />
+          <Property Name="pr_discount" Type="real" />
+          <Property Name="pr_evaluation" Type="text" />
+        </EntityType>
+        <EntityType Name="receivables">
+          <Key>
+            <PropertyRef Name="rv_id" />
+          </Key>
+          <Property Name="rv_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rv_pacid" Type="int" Nullable="false" />
+          <Property Name="rv_tmid" Type="int" />
+          <Property Name="rv_prid" Type="int" />
+          <Property Name="rv_amount" Type="real" />
+        </EntityType>
+        <EntityType Name="specialities">
+          <Key>
+            <PropertyRef Name="sp_id" />
+          </Key>
+          <Property Name="sp_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sp_name" Type="nvarchar" MaxLength="32" Nullable="false" />
+          <Property Name="sp_type" Type="nvarchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="treatment_plan">
+          <Key>
+            <PropertyRef Name="tm_id" />
+          </Key>
+          <Property Name="tm_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tm_pacid" Type="int" Nullable="false" />
+          <Property Name="tm_trid" Type="int" Nullable="false" />
+          <Property Name="tm_regdate" Type="datetime" Nullable="false" />
+          <Property Name="tm_startdate" Type="date" Nullable="false" />
+          <Property Name="tm_enddate" Type="date" Nullable="false" />
+          <Property Name="tm_price" Type="real" />
+          <Property Name="tm_status" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="treatments">
+          <Key>
+            <PropertyRef Name="tr_id" />
+          </Key>
+          <Property Name="tr_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tr_name" Type="varchar" MaxLength="32" />
+          <Property Name="tr_espid" Type="int" Nullable="false" />
+          <Property Name="tr_patid" Type="int" />
+          <Property Name="tr_baseprice" Type="real" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="usr_id" />
+          </Key>
+          <Property Name="usr_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="passwd_md5" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="role" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="last_login" Type="datetime" />
+          <Property Name="institution" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="cdentalModelStoreContainer">
+          <EntitySet Name="__RefactorLog" EntityType="Self.__RefactorLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="clinical_history" EntityType="Self.clinical_history" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ensurance" EntityType="Self.ensurance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="images" EntityType="Self.images" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="institutions" EntityType="Self.institutions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="medicines" EntityType="Self.medicines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="operators" EntityType="Self.operators" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="operators_stats" EntityType="Self.operators_stats" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pathologies" EntityType="Self.pathologies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="patient" EntityType="Self.patient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="patient_record" EntityType="Self.patient_record" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="payment_history" EntityType="Self.payment_history" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="procedures" EntityType="Self.procedures" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="receivables" EntityType="Self.receivables" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="specialities" EntityType="Self.specialities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="treatment_plan" EntityType="Self.treatment_plan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="treatments" EntityType="Self.treatments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="cdentalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__RefactorLog">
+          <Key>
+            <PropertyRef Name="OperationKey" />
+          </Key>
+          <Property Name="OperationKey" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="clinical_history">
+          <Key>
+            <PropertyRef Name="ch_code" />
+          </Key>
+          <Property Name="ch_code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ch_pacid" Type="Int32" Nullable="false" />
+          <Property Name="ch_operator" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ch_interrog" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ch_regdate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ensurance">
+          <Key>
+            <PropertyRef Name="en_code" />
+          </Key>
+          <Property Name="en_code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="en_type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="en_name" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="images">
+          <Key>
+            <PropertyRef Name="img_id" />
+          </Key>
+          <Property Name="img_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="img_group" Type="Int32" />
+          <Property Name="img_rgb" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="institutions">
+          <Key>
+            <PropertyRef Name="ins_id" />
+          </Key>
+          <Property Name="ins_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ins_name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ins_type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="medicines">
+          <Key>
+            <PropertyRef Name="med_id" />
+          </Key>
+          <Property Name="med_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="med_composition" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="med_commercial" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="med_dose" Type="Single" />
+          <Property Name="med_weightdoserelation" Type="Single" />
+          <Property Name="med_presentation" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="med_age" Type="Single" />
+          <Property Name="med_type" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="operators">
+          <Key>
+            <PropertyRef Name="op_id" />
+          </Key>
+          <Property Name="op_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="op_names" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="op_lastn" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="op_phone1" Type="String" MaxLength="16" FixedLength="true" Unicode="false" />
+          <Property Name="op_phone2" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="op_email" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="op_address" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="op_graddate" Type="DateTime" Precision="3" />
+          <Property Name="op_stdlvl" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="op_ingdate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="operators_stats">
+          <Key>
+            <PropertyRef Name="os_id" />
+          </Key>
+          <Property Name="os_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="os_opid" Type="Int32" Nullable="false" />
+          <Property Name="os_spid" Type="Int32" Nullable="false" />
+          <Property Name="os_speed" Type="Int32" Nullable="false" />
+          <Property Name="os_presition" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="pathologies">
+          <Key>
+            <PropertyRef Name="thos_id" />
+          </Key>
+          <Property Name="thos_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="thos_type" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="thos_name" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="thos_risk" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="patient">
+          <Key>
+            <PropertyRef Name="pac_id" />
+          </Key>
+          <Property Name="pac_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pac_ced" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="pac_name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="pac_lastn" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="pac_born" Type="DateTime" Precision="0" />
+          <Property Name="pac_race" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="pac_phone1" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="pac_phone2" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="pac_address" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="pac_job" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="pac_school" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="pac_ensur" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="patient_record">
+          <Key>
+            <PropertyRef Name="pr_id" />
+          </Key>
+          <Property Name="pr_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pr_pacid" Type="Int32" Nullable="false" />
+          <Property Name="pr_chid" Type="Int32" Nullable="false" />
+          <Property Name="pr_patid" Type="Int32" Nullable="false" />
+          <Property Name="pr_dentalloc" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="pr_facialloc" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="pr_gravity" Type="Int32" />
+          <Property Name="pr_prevtreat" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="pr_medic" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="pr_regdate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="payment_history">
+          <Key>
+            <PropertyRef Name="pay_id" />
+          </Key>
+          <Property Name="pay_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pay_pacid" Type="Int32" Nullable="false" />
+          <Property Name="pay_rvid" Type="Int32" />
+          <Property Name="pay_amount" Type="Single" />
+          <Property Name="pay_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="pay_mode" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="procedures">
+          <Key>
+            <PropertyRef Name="pr_id" />
+          </Key>
+          <Property Name="pr_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pr_pacid" Type="Int32" Nullable="false" />
+          <Property Name="pr_opid" Type="Int32" Nullable="false" />
+          <Property Name="pr_tmid" Type="Int32" />
+          <Property Name="pr_trid" Type="Int32" Nullable="false" />
+          <Property Name="pr_observations" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="pr_plandate" Type="DateTime" Precision="3" />
+          <Property Name="pr_procdate" Type="DateTime" Precision="3" />
+          <Property Name="pr_status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="pr_genprice" Type="Single" />
+          <Property Name="pr_discount" Type="Single" />
+          <Property Name="pr_evaluation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="receivables">
+          <Key>
+            <PropertyRef Name="rv_id" />
+          </Key>
+          <Property Name="rv_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rv_pacid" Type="Int32" Nullable="false" />
+          <Property Name="rv_tmid" Type="Int32" />
+          <Property Name="rv_prid" Type="Int32" />
+          <Property Name="rv_amount" Type="Single" />
+        </EntityType>
+        <EntityType Name="specialities">
+          <Key>
+            <PropertyRef Name="sp_id" />
+          </Key>
+          <Property Name="sp_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sp_name" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sp_type" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="treatment_plan">
+          <Key>
+            <PropertyRef Name="tm_id" />
+          </Key>
+          <Property Name="tm_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tm_pacid" Type="Int32" Nullable="false" />
+          <Property Name="tm_trid" Type="Int32" Nullable="false" />
+          <Property Name="tm_regdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="tm_startdate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="tm_enddate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="tm_price" Type="Single" />
+          <Property Name="tm_status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="treatments">
+          <Key>
+            <PropertyRef Name="tr_id" />
+          </Key>
+          <Property Name="tr_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tr_name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="tr_espid" Type="Int32" Nullable="false" />
+          <Property Name="tr_patid" Type="Int32" />
+          <Property Name="tr_baseprice" Type="Single" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="usr_id" />
+          </Key>
+          <Property Name="usr_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="passwd_md5" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="role" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="last_login" Type="DateTime" Precision="3" />
+          <Property Name="institution" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="cdentalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__RefactorLog" EntityType="Self.C__RefactorLog" />
+          <EntitySet Name="clinical_history" EntityType="Self.clinical_history" />
+          <EntitySet Name="ensurance" EntityType="Self.ensurance" />
+          <EntitySet Name="images" EntityType="Self.images" />
+          <EntitySet Name="institutions" EntityType="Self.institutions" />
+          <EntitySet Name="medicines" EntityType="Self.medicines" />
+          <EntitySet Name="operators" EntityType="Self.operators" />
+          <EntitySet Name="operators_stats" EntityType="Self.operators_stats" />
+          <EntitySet Name="pathologies" EntityType="Self.pathologies" />
+          <EntitySet Name="patient" EntityType="Self.patient" />
+          <EntitySet Name="patient_record" EntityType="Self.patient_record" />
+          <EntitySet Name="payment_history" EntityType="Self.payment_history" />
+          <EntitySet Name="procedures" EntityType="Self.procedures" />
+          <EntitySet Name="receivables" EntityType="Self.receivables" />
+          <EntitySet Name="specialities" EntityType="Self.specialities" />
+          <EntitySet Name="treatment_plan" EntityType="Self.treatment_plan" />
+          <EntitySet Name="treatments" EntityType="Self.treatments" />
+          <EntitySet Name="users" EntityType="Self.users" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="cdentalModelStoreContainer" CdmEntityContainer="cdentalEntities">
+          <EntitySetMapping Name="C__RefactorLog">
+            <EntityTypeMapping TypeName="cdentalModel.C__RefactorLog">
+              <MappingFragment StoreEntitySet="__RefactorLog">
+                <ScalarProperty Name="OperationKey" ColumnName="OperationKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="clinical_history">
+            <EntityTypeMapping TypeName="cdentalModel.clinical_history">
+              <MappingFragment StoreEntitySet="clinical_history">
+                <ScalarProperty Name="ch_code" ColumnName="ch_code" />
+                <ScalarProperty Name="ch_pacid" ColumnName="ch_pacid" />
+                <ScalarProperty Name="ch_operator" ColumnName="ch_operator" />
+                <ScalarProperty Name="ch_interrog" ColumnName="ch_interrog" />
+                <ScalarProperty Name="ch_regdate" ColumnName="ch_regdate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ensurance">
+            <EntityTypeMapping TypeName="cdentalModel.ensurance">
+              <MappingFragment StoreEntitySet="ensurance">
+                <ScalarProperty Name="en_code" ColumnName="en_code" />
+                <ScalarProperty Name="en_type" ColumnName="en_type" />
+                <ScalarProperty Name="en_name" ColumnName="en_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="images">
+            <EntityTypeMapping TypeName="cdentalModel.images">
+              <MappingFragment StoreEntitySet="images">
+                <ScalarProperty Name="img_id" ColumnName="img_id" />
+                <ScalarProperty Name="img_group" ColumnName="img_group" />
+                <ScalarProperty Name="img_rgb" ColumnName="img_rgb" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="institutions">
+            <EntityTypeMapping TypeName="cdentalModel.institutions">
+              <MappingFragment StoreEntitySet="institutions">
+                <ScalarProperty Name="ins_id" ColumnName="ins_id" />
+                <ScalarProperty Name="ins_name" ColumnName="ins_name" />
+                <ScalarProperty Name="ins_type" ColumnName="ins_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="medicines">
+            <EntityTypeMapping TypeName="cdentalModel.medicines">
+              <MappingFragment StoreEntitySet="medicines">
+                <ScalarProperty Name="med_id" ColumnName="med_id" />
+                <ScalarProperty Name="med_composition" ColumnName="med_composition" />
+                <ScalarProperty Name="med_commercial" ColumnName="med_commercial" />
+                <ScalarProperty Name="med_dose" ColumnName="med_dose" />
+                <ScalarProperty Name="med_weightdoserelation" ColumnName="med_weightdoserelation" />
+                <ScalarProperty Name="med_presentation" ColumnName="med_presentation" />
+                <ScalarProperty Name="med_age" ColumnName="med_age" />
+                <ScalarProperty Name="med_type" ColumnName="med_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="operators">
+            <EntityTypeMapping TypeName="cdentalModel.operators">
+              <MappingFragment StoreEntitySet="operators">
+                <ScalarProperty Name="op_id" ColumnName="op_id" />
+                <ScalarProperty Name="op_names" ColumnName="op_names" />
+                <ScalarProperty Name="op_lastn" ColumnName="op_lastn" />
+                <ScalarProperty Name="op_phone1" ColumnName="op_phone1" />
+                <ScalarProperty Name="op_phone2" ColumnName="op_phone2" />
+                <ScalarProperty Name="op_email" ColumnName="op_email" />
+                <ScalarProperty Name="op_address" ColumnName="op_address" />
+                <ScalarProperty Name="op_graddate" ColumnName="op_graddate" />
+                <ScalarProperty Name="op_stdlvl" ColumnName="op_stdlvl" />
+                <ScalarProperty Name="op_ingdate" ColumnName="op_ingdate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="operators_stats">
+            <EntityTypeMapping TypeName="cdentalModel.operators_stats">
+              <MappingFragment StoreEntitySet="operators_stats">
+                <ScalarProperty Name="os_id" ColumnName="os_id" />
+                <ScalarProperty Name="os_opid" ColumnName="os_opid" />
+                <ScalarProperty Name="os_spid" ColumnName="os_spid" />
+                <ScalarProperty Name="os_speed" ColumnName="os_speed" />
+                <ScalarProperty Name="os_presition" ColumnName="os_presition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pathologies">
+            <EntityTypeMapping TypeName="cdentalModel.pathologies">
+              <MappingFragment StoreEntitySet="pathologies">
+                <ScalarProperty Name="thos_id" ColumnName="thos_id" />
+                <ScalarProperty Name="thos_type" ColumnName="thos_type" />
+                <ScalarProperty Name="thos_name" ColumnName="thos_name" />
+                <ScalarProperty Name="thos_risk" ColumnName="thos_risk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="patient">
+            <EntityTypeMapping TypeName="cdentalModel.patient">
+              <MappingFragment StoreEntitySet="patient">
+                <ScalarProperty Name="pac_id" ColumnName="pac_id" />
+                <ScalarProperty Name="pac_ced" ColumnName="pac_ced" />
+                <ScalarProperty Name="pac_name" ColumnName="pac_name" />
+                <ScalarProperty Name="pac_lastn" ColumnName="pac_lastn" />
+                <ScalarProperty Name="pac_born" ColumnName="pac_born" />
+                <ScalarProperty Name="pac_race" ColumnName="pac_race" />
+                <ScalarProperty Name="pac_phone1" ColumnName="pac_phone1" />
+                <ScalarProperty Name="pac_phone2" ColumnName="pac_phone2" />
+                <ScalarProperty Name="pac_address" ColumnName="pac_address" />
+                <ScalarProperty Name="pac_job" ColumnName="pac_job" />
+                <ScalarProperty Name="pac_school" ColumnName="pac_school" />
+                <ScalarProperty Name="pac_ensur" ColumnName="pac_ensur" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="patient_record">
+            <EntityTypeMapping TypeName="cdentalModel.patient_record">
+              <MappingFragment StoreEntitySet="patient_record">
+                <ScalarProperty Name="pr_id" ColumnName="pr_id" />
+                <ScalarProperty Name="pr_pacid" ColumnName="pr_pacid" />
+                <ScalarProperty Name="pr_chid" ColumnName="pr_chid" />
+                <ScalarProperty Name="pr_patid" ColumnName="pr_patid" />
+                <ScalarProperty Name="pr_dentalloc" ColumnName="pr_dentalloc" />
+                <ScalarProperty Name="pr_facialloc" ColumnName="pr_facialloc" />
+                <ScalarProperty Name="pr_gravity" ColumnName="pr_gravity" />
+                <ScalarProperty Name="pr_prevtreat" ColumnName="pr_prevtreat" />
+                <ScalarProperty Name="pr_medic" ColumnName="pr_medic" />
+                <ScalarProperty Name="pr_regdate" ColumnName="pr_regdate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="payment_history">
+            <EntityTypeMapping TypeName="cdentalModel.payment_history">
+              <MappingFragment StoreEntitySet="payment_history">
+                <ScalarProperty Name="pay_id" ColumnName="pay_id" />
+                <ScalarProperty Name="pay_pacid" ColumnName="pay_pacid" />
+                <ScalarProperty Name="pay_rvid" ColumnName="pay_rvid" />
+                <ScalarProperty Name="pay_amount" ColumnName="pay_amount" />
+                <ScalarProperty Name="pay_date" ColumnName="pay_date" />
+                <ScalarProperty Name="pay_mode" ColumnName="pay_mode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="procedures">
+            <EntityTypeMapping TypeName="cdentalModel.procedures">
+              <MappingFragment StoreEntitySet="procedures">
+                <ScalarProperty Name="pr_id" ColumnName="pr_id" />
+                <ScalarProperty Name="pr_pacid" ColumnName="pr_pacid" />
+                <ScalarProperty Name="pr_opid" ColumnName="pr_opid" />
+                <ScalarProperty Name="pr_tmid" ColumnName="pr_tmid" />
+                <ScalarProperty Name="pr_trid" ColumnName="pr_trid" />
+                <ScalarProperty Name="pr_observations" ColumnName="pr_observations" />
+                <ScalarProperty Name="pr_plandate" ColumnName="pr_plandate" />
+                <ScalarProperty Name="pr_procdate" ColumnName="pr_procdate" />
+                <ScalarProperty Name="pr_status" ColumnName="pr_status" />
+                <ScalarProperty Name="pr_genprice" ColumnName="pr_genprice" />
+                <ScalarProperty Name="pr_discount" ColumnName="pr_discount" />
+                <ScalarProperty Name="pr_evaluation" ColumnName="pr_evaluation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="receivables">
+            <EntityTypeMapping TypeName="cdentalModel.receivables">
+              <MappingFragment StoreEntitySet="receivables">
+                <ScalarProperty Name="rv_id" ColumnName="rv_id" />
+                <ScalarProperty Name="rv_pacid" ColumnName="rv_pacid" />
+                <ScalarProperty Name="rv_tmid" ColumnName="rv_tmid" />
+                <ScalarProperty Name="rv_prid" ColumnName="rv_prid" />
+                <ScalarProperty Name="rv_amount" ColumnName="rv_amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="specialities">
+            <EntityTypeMapping TypeName="cdentalModel.specialities">
+              <MappingFragment StoreEntitySet="specialities">
+                <ScalarProperty Name="sp_id" ColumnName="sp_id" />
+                <ScalarProperty Name="sp_name" ColumnName="sp_name" />
+                <ScalarProperty Name="sp_type" ColumnName="sp_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="treatment_plan">
+            <EntityTypeMapping TypeName="cdentalModel.treatment_plan">
+              <MappingFragment StoreEntitySet="treatment_plan">
+                <ScalarProperty Name="tm_id" ColumnName="tm_id" />
+                <ScalarProperty Name="tm_pacid" ColumnName="tm_pacid" />
+                <ScalarProperty Name="tm_trid" ColumnName="tm_trid" />
+                <ScalarProperty Name="tm_regdate" ColumnName="tm_regdate" />
+                <ScalarProperty Name="tm_startdate" ColumnName="tm_startdate" />
+                <ScalarProperty Name="tm_enddate" ColumnName="tm_enddate" />
+                <ScalarProperty Name="tm_price" ColumnName="tm_price" />
+                <ScalarProperty Name="tm_status" ColumnName="tm_status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="treatments">
+            <EntityTypeMapping TypeName="cdentalModel.treatments">
+              <MappingFragment StoreEntitySet="treatments">
+                <ScalarProperty Name="tr_id" ColumnName="tr_id" />
+                <ScalarProperty Name="tr_name" ColumnName="tr_name" />
+                <ScalarProperty Name="tr_espid" ColumnName="tr_espid" />
+                <ScalarProperty Name="tr_patid" ColumnName="tr_patid" />
+                <ScalarProperty Name="tr_baseprice" ColumnName="tr_baseprice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="cdentalModel.users">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="usr_id" ColumnName="usr_id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="passwd_md5" ColumnName="passwd_md5" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="last_login" ColumnName="last_login" />
+                <ScalarProperty Name="institution" ColumnName="institution" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

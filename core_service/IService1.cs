@@ -12,12 +12,9 @@ namespace core_service
     public interface IService1
     {
         [OperationContract]
-        void DoWork();
+        string obtenerNombre(Int32 ID);
 
         [OperationContract]
-        String prueba_core_service();
-
-        [OperationContract]
-        String prueba_DB(Int32 ID);
+        Boolean actualizarNombre(Int32 eID, String nuevonombre);
     }
 }

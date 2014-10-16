@@ -4,7 +4,9 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using core_service.mainDB_ref;
+using generalDB;
+
+
 
 namespace core_service
 {
@@ -12,19 +14,45 @@ namespace core_service
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        public void DoWork()
+
+        public String obtenerNombre(Int32 eID)
         {
-        }
-        public String prueba_core_service()
-        {
-            return "funciona!";
+            generalDB.objectClasses.K_Patient _paciente = new generalDB.objectClasses.K_Patient();
+            _paciente.ID = eID;
+            _paciente.getPatientByID();
+            if (_paciente.Exists)
+            {
+                return _paciente.Name;
+            }
+            else
+            {
+                return "no existe paciente";
+            }
+
         }
 
-        public String prueba_DB(Int32 ID)
+        public Boolean actualizarNombre(Int32 eID, String nuevonombre)
         {
-            ImainDB_serviceClient client = new ImainDB_serviceClient();
-            return client.getUsername(ID);
-            
+            generalDB.objectClasses.K_Patient _paciente = new generalDB.objectClasses.K_Patient();
+            _paciente.ID = eID;
+            _paciente.getPatientByID();
+            if (_paciente.Exists)
+            {
+                _paciente.Name = nuevonombre;
+                if(_paciente.updatePatient())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+
         }
     }
 }
