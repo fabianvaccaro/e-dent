@@ -4,25 +4,52 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b20da80bd5174b8f9ed52af348382525" Name="Diagram1">
-        <EntityTypeShape EntityType="cdentalModel.C__RefactorLog" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="cdentalModel.clinical_history" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="cdentalModel.ensurance" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="cdentalModel.images" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="cdentalModel.institutions" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="cdentalModel.medicines" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="cdentalModel.operators" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="cdentalModel.operators_stats" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="cdentalModel.pathologies" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="cdentalModel.patient" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="cdentalModel.patient_record" Width="1.5" PointX="4.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="cdentalModel.payment_history" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="cdentalModel.procedures" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="cdentalModel.receivables" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="cdentalModel.specialities" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="cdentalModel.treatment_plan" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="cdentalModel.treatments" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="cdentalModel.users" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+      <Diagram DiagramId="b20da80bd5174b8f9ed52af348382525" Name="Diagram1" ZoomLevel="120">
+        <EntityTypeShape EntityType="cdentalModel.C__RefactorLog" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="cdentalModel.clinical_history" Width="1.5" PointX="7.5" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="cdentalModel.ensurance" Width="1.5" PointX="2.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="cdentalModel.images" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="cdentalModel.institutions" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="cdentalModel.medicines" Width="1.5" PointX="12.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="cdentalModel.operators" Width="1.5" PointX="10.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cdentalModel.operators_stats" Width="1.5" PointX="15.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="cdentalModel.pathologies" Width="1.5" PointX="6" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="cdentalModel.patient" Width="1.5" PointX="5.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cdentalModel.patient_record" Width="1.5" PointX="9.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="cdentalModel.payment_history" Width="1.5" PointX="7.5" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="cdentalModel.procedures" Width="1.5" PointX="12.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="cdentalModel.receivables" Width="1.5" PointX="18" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="cdentalModel.specialities" Width="1.5" PointX="6" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cdentalModel.treatment_plan" Width="1.5" PointX="10.5" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="cdentalModel.treatments" Width="1.5" PointX="8.25" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="cdentalModel.users" Width="1.5" PointX="2.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="cdentalModel.divisions" Width="1.5" PointX="3" PointY="11.25" />
+        <EntityTypeShape EntityType="cdentalModel.recipies" Width="1.5" PointX="15" PointY="11" />
+        <AssociationConnector Association="cdentalModel.FK_clinical_history_operators" />
+        <AssociationConnector Association="cdentalModel.FK_clinical_history_patient" />
+        <AssociationConnector Association="cdentalModel.FK_patient_record_clinical_history" />
+        <AssociationConnector Association="cdentalModel.FK_divisions_idInstitution" />
+        <AssociationConnector Association="cdentalModel.FK_patient_divisions" />
+        <AssociationConnector Association="cdentalModel.FK_recipies_medicines" />
+        <AssociationConnector Association="cdentalModel.FK_operators_stats_operators" />
+        <AssociationConnector Association="cdentalModel.FK_procedures_operators" />
+        <AssociationConnector Association="cdentalModel.FK_operators_stats_specialities" />
+        <AssociationConnector Association="cdentalModel.FK_patient_record_pathologies" />
+        <AssociationConnector Association="cdentalModel.FK_treatments_pathologies" />
+        <AssociationConnector Association="cdentalModel.FK_patient_record_patient" />
+        <AssociationConnector Association="cdentalModel.FK_payment_history_patient" />
+        <AssociationConnector Association="cdentalModel.FK_procedures_patient" />
+        <AssociationConnector Association="cdentalModel.FK_receivables_patient" />
+        <AssociationConnector Association="cdentalModel.FK_recipies_patient" />
+        <AssociationConnector Association="cdentalModel.FK_treatment_plan_patient" />
+        <AssociationConnector Association="cdentalModel.FK_payment_history_receivables" />
+        <AssociationConnector Association="cdentalModel.FK_procedures_treatment_plan" />
+        <AssociationConnector Association="cdentalModel.FK_procedures_treatments" />
+        <AssociationConnector Association="cdentalModel.FK_receivables_procedures" />
+        <AssociationConnector Association="cdentalModel.FK_recipies_procedures" />
+        <AssociationConnector Association="cdentalModel.FK_receivables_treatment_plan" />
+        <AssociationConnector Association="cdentalModel.FK_treatments_specialities" />
+        <AssociationConnector Association="cdentalModel.FK_treatment_plan_treatments" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

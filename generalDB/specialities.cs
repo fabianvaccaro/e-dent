@@ -14,8 +14,17 @@ namespace generalDB
     
     public partial class specialities
     {
+        public specialities()
+        {
+            this.operators_stats = new HashSet<operators_stats>();
+            this.treatments = new HashSet<treatments>();
+        }
+    
         public int sp_id { get; set; }
         public string sp_name { get; set; }
         public string sp_type { get; set; }
+    
+        public virtual ICollection<operators_stats> operators_stats { get; set; }
+        public virtual ICollection<treatments> treatments { get; set; }
     }
 }

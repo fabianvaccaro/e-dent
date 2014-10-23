@@ -14,10 +14,19 @@ namespace generalDB
     
     public partial class clinical_history
     {
+        public clinical_history()
+        {
+            this.patient_record = new HashSet<patient_record>();
+        }
+    
         public int ch_code { get; set; }
         public int ch_pacid { get; set; }
-        public string ch_operator { get; set; }
+        public int ch_operator { get; set; }
         public string ch_interrog { get; set; }
         public Nullable<System.DateTime> ch_regdate { get; set; }
+    
+        public virtual operators operators { get; set; }
+        public virtual patient patient { get; set; }
+        public virtual ICollection<patient_record> patient_record { get; set; }
     }
 }

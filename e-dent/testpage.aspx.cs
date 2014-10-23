@@ -19,8 +19,15 @@ namespace e_dent
         protected void Button1_Click(object sender, EventArgs e)
         {
             Service1Client cliente = new Service1Client();
-       //     cliente.createUser(txt_username.Text, txt_passwd.Text, txt_role.Text, txt_institution.Text);
-            lbl_info.Text = "Usuario añadido";
+            
+            if (cliente.registrarNombre(txt_username.Text))
+            {
+                lbl_info.Text = "Conseguido";
+            }
+            else
+            {
+                lbl_info.Text = "valepaloma";
+            }
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -55,6 +62,11 @@ namespace e_dent
             Service1Client cliente = new Service1Client();
             int eID = int.Parse(txt_ptID.Text);
             txt_ptNombre.Text = cliente.obtenerNombre(eID);
+        }
+
+        protected void txt_username_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

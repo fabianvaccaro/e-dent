@@ -69,6 +69,9 @@
     <Compile Include="C__RefactorLog.cs">
       <DependentUpon>cdental_model.tt</DependentUpon>
     </Compile>
+    <Compile Include="divisions.cs">
+      <DependentUpon>cdental_model.tt</DependentUpon>
+    </Compile>
     <Compile Include="ensurance.cs">
       <DependentUpon>cdental_model.tt</DependentUpon>
     </Compile>
@@ -82,7 +85,22 @@
     <Compile Include="medicines.cs">
       <DependentUpon>cdental_model.tt</DependentUpon>
     </Compile>
+    <Compile Include="objectClasses\K_clinHistory.cs" />
+    <Compile Include="objectClasses\K_Medicines.cs" />
+    <Compile Include="objectClasses\K_Operator.cs" />
+    <Compile Include="objectClasses\K_OpStats.cs" />
+    <Compile Include="objectClasses\K_Pathology.cs" />
     <Compile Include="objectClasses\K_Patient.cs" />
+    <Compile Include="objectClasses\K_PatRecord.cs" />
+    <Compile Include="objectClasses\K_PaymentHistory.cs" />
+    <Compile Include="objectClasses\K_Procedure.cs" />
+    <Compile Include="objectClasses\K_ptResult.cs" />
+    <Compile Include="objectClasses\K_ptSearch.cs" />
+    <Compile Include="objectClasses\K_Receivable.cs" />
+    <Compile Include="objectClasses\K_Recipy.cs" />
+    <Compile Include="objectClasses\K_Speciality.cs" />
+    <Compile Include="objectClasses\K_Treatment.cs" />
+    <Compile Include="objectClasses\K_TrPlan.cs" />
     <Compile Include="op.cs" />
     <Compile Include="operators.cs">
       <DependentUpon>cdental_model.tt</DependentUpon>
@@ -107,6 +125,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="receivables.cs">
+      <DependentUpon>cdental_model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="recipies.cs">
       <DependentUpon>cdental_model.tt</DependentUpon>
     </Compile>
     <Compile Include="specialities.cs">

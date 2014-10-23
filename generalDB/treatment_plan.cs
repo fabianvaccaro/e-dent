@@ -14,6 +14,12 @@ namespace generalDB
     
     public partial class treatment_plan
     {
+        public treatment_plan()
+        {
+            this.procedures = new HashSet<procedures>();
+            this.receivables = new HashSet<receivables>();
+        }
+    
         public int tm_id { get; set; }
         public int tm_pacid { get; set; }
         public int tm_trid { get; set; }
@@ -22,5 +28,10 @@ namespace generalDB
         public System.DateTime tm_enddate { get; set; }
         public Nullable<float> tm_price { get; set; }
         public string tm_status { get; set; }
+    
+        public virtual patient patient { get; set; }
+        public virtual ICollection<procedures> procedures { get; set; }
+        public virtual ICollection<receivables> receivables { get; set; }
+        public virtual treatments treatments { get; set; }
     }
 }

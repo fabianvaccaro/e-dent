@@ -12,6 +12,8 @@ namespace generalDB.objectClasses
     {
         [DataMember]    
         public Int32 ID { get; set; }
+        [DataMember]
+        public Int32 DIVID { get; set; }
         [DataMember]    
         public String DNI { get; set; }
         [DataMember]
@@ -36,10 +38,12 @@ namespace generalDB.objectClasses
         public String Ensurance { get; set; }
         [DataMember]
         public Boolean Exists { get; set; }
+        [DataMember]
+        public String ESTATS { get; set; }
 
 
         //Constructor completo
-        public K_Patient (String EDNI, String Ename, String Elastn, DateTime Eborn, String Erace, String Ephone1, String Ephone2, String Eaddress, String Ejob, String Eschool, String Eensur, Boolean EExists)
+        public K_Patient(String EDNI, String Ename, String Elastn, DateTime Eborn, String Erace, String Ephone1, String Ephone2, String Eaddress, String Ejob, String Eschool, String Eensur, Boolean EExists, String EerrorType)
         {
             DNI = EDNI;
             Name = Ename;
@@ -53,6 +57,7 @@ namespace generalDB.objectClasses
             School = Eschool;
             Ensurance = Eensur;
             Exists = EExists;
+            ESTATS = EerrorType;
         }
 
         //Constructor general
@@ -70,6 +75,7 @@ namespace generalDB.objectClasses
             School = String.Empty;
             Ensurance = String.Empty;
             Exists = false;
+            ESTATS = String.Empty;
         }
 
         //Popula el objeto con información de la base de datos a partir del ID registrado dentro de este
@@ -88,6 +94,7 @@ namespace generalDB.objectClasses
                 {
                     if (pacienteEncontrado.paciente!= null)  //verifica si el resultado de la petición no es vacío
                     {
+                        DIVID = pacienteEncontrado.paciente.pac_divId;
                         DNI = pacienteEncontrado.paciente.pac_ced;
                         Name = pacienteEncontrado.paciente.pac_name;
                         LastName = pacienteEncontrado.paciente.pac_lastn;
@@ -138,6 +145,7 @@ namespace generalDB.objectClasses
 
                     if (pacienteEncontrado != null)
                     {
+                        pacienteEncontrado.paciente.pac_divId = DIVID;
                         pacienteEncontrado.paciente.pac_ced = DNI;
                         pacienteEncontrado.paciente.pac_name = Name;
                         pacienteEncontrado.paciente.pac_lastn = LastName;
@@ -166,5 +174,79 @@ namespace generalDB.objectClasses
 
             }
         }
+
+
+        //verifies if a DNI has been recorded previuously
+        Boolean checkDNI()
+        {
+            using (cdentalEntities context = new cdentalEntities())
+            {
+                var pacienteEncontrado = (from paciente in context.patient
+                                          where paciente.pac_ced == DNI
+                                          select new
+                                          {
+                                              paciente
+                                          }).FirstOrDefault();
+                try
+                {
+                    if (pacienteEncontrado.paciente != null)  //verifica si el resultado de la petición no es vacío
+                    {
+                        return true;
+                    }
+                    return false;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                    return false;
+                }
+            }
+        }
+        //add record to database
+        public Boolean addRecord()
+        {
+            using (cdentalEntities context = new cdentalEntities())
+            {
+
+                patient patientObj = new patient();
+                patientObj.pac_divId = DIVID;
+                patientObj.pac_ced = DNI;
+                patientObj.pac_name = Name;
+                patientObj.pac_lastn = LastName;
+                patientObj.pac_born = Born;
+                patientObj.pac_race = Race;
+                patientObj.pac_phone1 = Phone1;
+                patientObj.pac_phone2 = Phone2;
+                patientObj.pac_address = Address;
+                patientObj.pac_job = Job;
+                patientObj.pac_school = School;
+                patientObj.pac_ensur = Ensurance;
+
+                try
+                {
+                    if(!checkDNI())
+                    {
+                        context.patient.Add(patientObj);
+                        context.SaveChanges();
+                        ESTATS = "Correcto";
+                        
+                    }
+                    else
+                    {
+                        ESTATS = "El DNI seleccionado ya existe";
+                        return false;
+                    }
+                    
+                }
+                catch(Exception e)
+                {
+                    ESTATS = e.ToString();
+                    return false;
+                }
+                return true;
+            }
+        }
+
+       
     }
 }

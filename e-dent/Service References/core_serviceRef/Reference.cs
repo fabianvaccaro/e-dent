@@ -26,6 +26,12 @@ namespace e_dent.core_serviceRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/actualizarNombre", ReplyAction="http://tempuri.org/IService1/actualizarNombreResponse")]
         System.Threading.Tasks.Task<bool> actualizarNombreAsync(int eID, string nuevonombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/registrarNombre", ReplyAction="http://tempuri.org/IService1/registrarNombreResponse")]
+        bool registrarNombre(string nombrecillo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/registrarNombre", ReplyAction="http://tempuri.org/IService1/registrarNombreResponse")]
+        System.Threading.Tasks.Task<bool> registrarNombreAsync(string nombrecillo);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -69,6 +75,14 @@ namespace e_dent.core_serviceRef {
         
         public System.Threading.Tasks.Task<bool> actualizarNombreAsync(int eID, string nuevonombre) {
             return base.Channel.actualizarNombreAsync(eID, nuevonombre);
+        }
+        
+        public bool registrarNombre(string nombrecillo) {
+            return base.Channel.registrarNombre(nombrecillo);
+        }
+        
+        public System.Threading.Tasks.Task<bool> registrarNombreAsync(string nombrecillo) {
+            return base.Channel.registrarNombreAsync(nombrecillo);
         }
     }
 }

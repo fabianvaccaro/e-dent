@@ -14,6 +14,13 @@ namespace generalDB
     
     public partial class operators
     {
+        public operators()
+        {
+            this.clinical_history = new HashSet<clinical_history>();
+            this.operators_stats = new HashSet<operators_stats>();
+            this.procedures = new HashSet<procedures>();
+        }
+    
         public int op_id { get; set; }
         public string op_names { get; set; }
         public string op_lastn { get; set; }
@@ -24,5 +31,9 @@ namespace generalDB
         public Nullable<System.DateTime> op_graddate { get; set; }
         public string op_stdlvl { get; set; }
         public Nullable<System.DateTime> op_ingdate { get; set; }
+    
+        public virtual ICollection<clinical_history> clinical_history { get; set; }
+        public virtual ICollection<operators_stats> operators_stats { get; set; }
+        public virtual ICollection<procedures> procedures { get; set; }
     }
 }

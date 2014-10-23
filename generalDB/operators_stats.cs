@@ -19,5 +19,8 @@ namespace generalDB
         public int os_spid { get; set; }
         public int os_speed { get; set; }
         public int os_presition { get; set; }
+    
+        public virtual operators operators { get; set; }
+        public virtual specialities specialities { get; set; }
     }
 }

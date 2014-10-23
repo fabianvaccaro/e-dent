@@ -14,10 +14,16 @@ namespace generalDB
     
     public partial class procedures
     {
+        public procedures()
+        {
+            this.receivables = new HashSet<receivables>();
+            this.recipies = new HashSet<recipies>();
+        }
+    
         public int pr_id { get; set; }
         public int pr_pacid { get; set; }
         public int pr_opid { get; set; }
-        public Nullable<int> pr_tmid { get; set; }
+        public int pr_tmid { get; set; }
         public int pr_trid { get; set; }
         public string pr_observations { get; set; }
         public Nullable<System.DateTime> pr_plandate { get; set; }
@@ -26,5 +32,12 @@ namespace generalDB
         public Nullable<float> pr_genprice { get; set; }
         public Nullable<float> pr_discount { get; set; }
         public string pr_evaluation { get; set; }
+    
+        public virtual operators operators { get; set; }
+        public virtual patient patient { get; set; }
+        public virtual treatment_plan treatment_plan { get; set; }
+        public virtual treatments treatments { get; set; }
+        public virtual ICollection<receivables> receivables { get; set; }
+        public virtual ICollection<recipies> recipies { get; set; }
     }
 }

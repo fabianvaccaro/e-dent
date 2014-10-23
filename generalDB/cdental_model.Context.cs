@@ -43,5 +43,7 @@ namespace generalDB
         public virtual DbSet<treatment_plan> treatment_plan { get; set; }
         public virtual DbSet<treatments> treatments { get; set; }
         public virtual DbSet<users> users { get; set; }
+        public virtual DbSet<divisions> divisions { get; set; }
+        public virtual DbSet<recipies> recipies { get; set; }
     }
 }

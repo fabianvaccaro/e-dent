@@ -14,6 +14,11 @@ namespace generalDB
     
     public partial class medicines
     {
+        public medicines()
+        {
+            this.recipies = new HashSet<recipies>();
+        }
+    
         public int med_id { get; set; }
         public string med_composition { get; set; }
         public string med_commercial { get; set; }
@@ -22,5 +27,7 @@ namespace generalDB
         public string med_presentation { get; set; }
         public Nullable<float> med_age { get; set; }
         public string med_type { get; set; }
+    
+        public virtual ICollection<recipies> recipies { get; set; }
     }
 }

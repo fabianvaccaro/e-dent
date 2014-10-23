@@ -12,16 +12,16 @@ namespace generalDB
     using System;
     using System.Collections.Generic;
     
-    public partial class payment_history
+    public partial class recipies
     {
-        public int pay_id { get; set; }
-        public int pay_pacid { get; set; }
-        public int pay_rvid { get; set; }
-        public Nullable<float> pay_amount { get; set; }
-        public System.DateTime pay_date { get; set; }
-        public string pay_mode { get; set; }
+        public int rp_id { get; set; }
+        public int rp_prid { get; set; }
+        public int rp_pacid { get; set; }
+        public int rp_medid { get; set; }
+        public string rp_observations { get; set; }
     
+        public virtual medicines medicines { get; set; }
         public virtual patient patient { get; set; }
-        public virtual receivables receivables { get; set; }
+        public virtual procedures procedures { get; set; }
     }
 }

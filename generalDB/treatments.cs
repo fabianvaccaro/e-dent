@@ -14,10 +14,21 @@ namespace generalDB
     
     public partial class treatments
     {
+        public treatments()
+        {
+            this.procedures = new HashSet<procedures>();
+            this.treatment_plan = new HashSet<treatment_plan>();
+        }
+    
         public int tr_id { get; set; }
         public string tr_name { get; set; }
         public int tr_espid { get; set; }
-        public Nullable<int> tr_patid { get; set; }
+        public int tr_patid { get; set; }
         public Nullable<float> tr_baseprice { get; set; }
+    
+        public virtual pathologies pathologies { get; set; }
+        public virtual ICollection<procedures> procedures { get; set; }
+        public virtual specialities specialities { get; set; }
+        public virtual ICollection<treatment_plan> treatment_plan { get; set; }
     }
 }

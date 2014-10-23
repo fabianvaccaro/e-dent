@@ -16,5 +16,8 @@ namespace core_service
 
         [OperationContract]
         Boolean actualizarNombre(Int32 eID, String nuevonombre);
+
+        [OperationContract]
+        Boolean registrarNombre(String nombrecillo);
     }
 }

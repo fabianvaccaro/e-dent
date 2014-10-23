@@ -14,8 +14,15 @@ namespace generalDB
     
     public partial class institutions
     {
+        public institutions()
+        {
+            this.divisions = new HashSet<divisions>();
+        }
+    
         public int ins_id { get; set; }
         public string ins_name { get; set; }
         public string ins_type { get; set; }
+    
+        public virtual ICollection<divisions> divisions { get; set; }
     }
 }

@@ -17,29 +17,15 @@
     </div>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
-                <asp:Label ID="Label1" runat="server" Text="Username"></asp:Label>
+                <asp:Label ID="Label1" runat="server" Text="NOMBRE"></asp:Label>
                 <br />
-                <asp:TextBox ID="txt_username" runat="server"></asp:TextBox>
-                <br />
-                <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
-                <br />
-                <asp:TextBox ID="txt_passwd" runat="server" TextMode="Password"></asp:TextBox>
+                <asp:TextBox ID="txt_username" runat="server" OnTextChanged="txt_username_TextChanged"></asp:TextBox>
                 <br />
                 <br />
-                <asp:Label ID="Label3" runat="server" Text="Role"></asp:Label>
-                <br />
-                <asp:TextBox ID="txt_role" runat="server"></asp:TextBox>
+                <asp:Label ID="lbl_info" runat="server" Text="INFO"></asp:Label>
                 <br />
                 <br />
-                <asp:Label ID="Label4" runat="server" Text="Institution"></asp:Label>
-                <br />
-                <asp:TextBox ID="txt_institution" runat="server"></asp:TextBox>
-                <br />
-                <br />
-                <asp:Label ID="lbl_info" runat="server" Text=""></asp:Label>
-                <br />
-                <br />
-                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Crear Usuario" />
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Crear" />
             </ContentTemplate>
         </asp:UpdatePanel>
         <asp:UpdatePanel ID="UpdatePanel2" runat="server">

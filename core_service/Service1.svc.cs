@@ -54,5 +54,14 @@ namespace core_service
             }
 
         }
+
+        public Boolean registrarNombre(String nombrecillo)
+        {
+            generalDB.objectClasses.K_Patient paciente = new generalDB.objectClasses.K_Patient();
+            paciente.DIVID = 1;
+            paciente.DNI = "11111";
+            paciente.Name = "narajnas";
+            return paciente.addRecord();
+        }
     }
 }

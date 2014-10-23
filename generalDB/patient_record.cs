@@ -24,5 +24,9 @@ namespace generalDB
         public string pr_prevtreat { get; set; }
         public string pr_medic { get; set; }
         public Nullable<System.DateTime> pr_regdate { get; set; }
+    
+        public virtual clinical_history clinical_history { get; set; }
+        public virtual pathologies pathologies { get; set; }
+        public virtual patient patient { get; set; }
     }
 }

@@ -12,16 +12,19 @@ namespace generalDB
     using System;
     using System.Collections.Generic;
     
-    public partial class payment_history
+    public partial class divisions
     {
-        public int pay_id { get; set; }
-        public int pay_pacid { get; set; }
-        public int pay_rvid { get; set; }
-        public Nullable<float> pay_amount { get; set; }
-        public System.DateTime pay_date { get; set; }
-        public string pay_mode { get; set; }
+        public divisions()
+        {
+            this.patient = new HashSet<patient>();
+        }
     
-        public virtual patient patient { get; set; }
-        public virtual receivables receivables { get; set; }
+        public int div_id { get; set; }
+        public int div_instId { get; set; }
+        public string div_name { get; set; }
+        public Nullable<int> idInstitution { get; set; }
+    
+        public virtual institutions institutions { get; set; }
+        public virtual ICollection<patient> patient { get; set; }
     }
 }
