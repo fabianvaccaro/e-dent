@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="appointments.cs">
+      <DependentUpon>cdental_model.tt</DependentUpon>
+    </Compile>
     <Compile Include="cdental_model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

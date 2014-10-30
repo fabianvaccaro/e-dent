@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/Default.aspx" title="Inicio"  description="Inicio">
+      <siteMapNode title="Atención al público">
+        <siteMapNode title="Pacientes">
+          <siteMapNode title="Ingreso de nuevo paciente">
+            <siteMapNode url="" title="Datos de afiliación"  description="" />
+            <siteMapNode url="" title="Historia clínica general"  description="">
+              <siteMapNode url="" title="Historia médica"  description="" />
+              <siteMapNode url="" title="Estado dentario"  description="" />
+              <siteMapNode url="" title="Estado periodontal"  description="" />
+              <siteMapNode url="" title="Estado ortodóntico"  description="" />
+              <siteMapNode url="" title="Registro fotografico"  description="" />
+            </siteMapNode>
+            <siteMapNode url="" title="Historia clínica expandida"  description="">
+              <siteMapNode title="Habilidad Masticatoria">
+                <siteMapNode url="" title="HM Percibida"  description="" />
+                <siteMapNode url="" title="Test de mezcla"  description="" />
+              </siteMapNode>
+            </siteMapNode>
+          </siteMapNode>
+          <siteMapNode title="Calendario">
+            <siteMapNode title="Citas para"></siteMapNode>
+          </siteMapNode>
+          <siteMapNode title="Buscar paciente"></siteMapNode>
+          <siteMapNode title="Registro unificado">
+            <siteMapNode title="Editar datos de afiliación"></siteMapNode>
+            <siteMapNode title="Diagnósticos">
+              <siteMapNode title="Nuevo diagnóstico"></siteMapNode>
+            </siteMapNode>
+            <siteMapNode title="Historial de atenciones"></siteMapNode>
+            <siteMapNode title="Planes de tratamiento">
+              <siteMapNode title="Nuevo plan de tratamiento"></siteMapNode>
+              <siteMapNode title="Descripción"></siteMapNode>
+              <siteMapNode title="Planificación de visitas"></siteMapNode>
+            </siteMapNode>
+            <siteMapNode title="Nueva consulta"></siteMapNode>
+            <siteMapNode title="Presupuesto">
+              <siteMapNode title="Detalle"></siteMapNode>
+              <siteMapNode title="Registrar cobro"></siteMapNode>
+            </siteMapNode>
+          </siteMapNode>
+        </siteMapNode>     
+      </siteMapNode>
+      <siteMapNode title="Administración">
+        <siteMapNode title="Institución"></siteMapNode>
+        <siteMapNode title="Talento humano">
+          <siteMapNode title="Buscar"></siteMapNode>
+          <siteMapNode title="Detalle">
+            <siteMapNode title="Informe de trabajo"></siteMapNode>
+          </siteMapNode>
+          <siteMapNode title="Ingreso de nuevo personal"></siteMapNode>
+        </siteMapNode>
+        <siteMapNode title="Control de inventario">
+          <siteMapNode title="Ingresar informe de inventario"></siteMapNode>
+        </siteMapNode>
+      </siteMapNode>
+        <siteMapNode url="" title="Modulos"  description="" />
+        <siteMapNode url="" title=""  description="" />
+    </siteMapNode>
+</siteMap>

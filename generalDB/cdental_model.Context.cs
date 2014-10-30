@@ -45,5 +45,6 @@ namespace generalDB
         public virtual DbSet<users> users { get; set; }
         public virtual DbSet<divisions> divisions { get; set; }
         public virtual DbSet<recipies> recipies { get; set; }
+        public virtual DbSet<appointments> appointments { get; set; }
     }
 }

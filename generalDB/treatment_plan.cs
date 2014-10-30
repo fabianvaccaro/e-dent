@@ -18,6 +18,7 @@ namespace generalDB
         {
             this.procedures = new HashSet<procedures>();
             this.receivables = new HashSet<receivables>();
+            this.appointments = new HashSet<appointments>();
         }
     
         public int tm_id { get; set; }
@@ -33,5 +34,6 @@ namespace generalDB
         public virtual ICollection<procedures> procedures { get; set; }
         public virtual ICollection<receivables> receivables { get; set; }
         public virtual treatments treatments { get; set; }
+        public virtual ICollection<appointments> appointments { get; set; }
     }
 }

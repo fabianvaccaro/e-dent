@@ -11,6 +11,15 @@
           </Key>
           <Property Name="OperationKey" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
+        <EntityType Name="appointments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tm_id" Type="int" Nullable="false" />
+          <Property Name="appDate" Type="datetime" Nullable="false" />
+          <Property Name="realDate" Type="datetime" />
+        </EntityType>
         <EntityType Name="clinical_history">
           <Key>
             <PropertyRef Name="ch_code" />
@@ -224,6 +233,18 @@
           <Property Name="last_login" Type="datetime" />
           <Property Name="institution" Type="nvarchar" MaxLength="10" />
         </EntityType>
+        <Association Name="FK_appointments_tmplan">
+          <End Role="treatment_plan" Type="Self.treatment_plan" Multiplicity="1" />
+          <End Role="appointments" Type="Self.appointments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="treatment_plan">
+              <PropertyRef Name="tm_id" />
+            </Principal>
+            <Dependent Role="appointments">
+              <PropertyRef Name="tm_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_clinical_history_operators">
           <End Role="operators" Type="Self.operators" Multiplicity="1" />
           <End Role="clinical_history" Type="Self.clinical_history" Multiplicity="*" />
@@ -526,6 +547,7 @@
         </Association>
         <EntityContainer Name="cdentalModelStoreContainer">
           <EntitySet Name="__RefactorLog" EntityType="Self.__RefactorLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="appointments" EntityType="Self.appointments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="clinical_history" EntityType="Self.clinical_history" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="divisions" EntityType="Self.divisions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ensurance" EntityType="Self.ensurance" Schema="dbo" store:Type="Tables" />
@@ -545,6 +567,10 @@
           <EntitySet Name="treatment_plan" EntityType="Self.treatment_plan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="treatments" EntityType="Self.treatments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_appointments_tmplan" Association="Self.FK_appointments_tmplan">
+            <End Role="treatment_plan" EntitySet="treatment_plan" />
+            <End Role="appointments" EntitySet="appointments" />
+          </AssociationSet>
           <AssociationSet Name="FK_clinical_history_operators" Association="Self.FK_clinical_history_operators">
             <End Role="operators" EntitySet="operators" />
             <End Role="clinical_history" EntitySet="clinical_history" />
@@ -869,6 +895,7 @@
           <NavigationProperty Name="procedures" Relationship="cdentalModel.FK_procedures_treatment_plan" FromRole="treatment_plan" ToRole="procedures" />
           <NavigationProperty Name="receivables" Relationship="cdentalModel.FK_receivables_treatment_plan" FromRole="treatment_plan" ToRole="receivables" />
           <NavigationProperty Name="treatments" Relationship="cdentalModel.FK_treatment_plan_treatments" FromRole="treatment_plan" ToRole="treatments" />
+          <NavigationProperty Name="appointments" Relationship="cdentalModel.FK_appointments_tmplan" FromRole="treatment_plan" ToRole="appointments" />
         </EntityType>
         <EntityType Name="treatments">
           <Key>
@@ -1015,6 +1042,11 @@
           <AssociationSet Name="FK_treatment_plan_treatments" Association="cdentalModel.FK_treatment_plan_treatments">
             <End Role="treatments" EntitySet="treatments" />
             <End Role="treatment_plan" EntitySet="treatment_plan" />
+          </AssociationSet>
+          <EntitySet Name="appointments" EntityType="cdentalModel.appointments" />
+          <AssociationSet Name="FK_appointments_tmplan" Association="cdentalModel.FK_appointments_tmplan">
+            <End Role="treatment_plan" EntitySet="treatment_plan" />
+            <End Role="appointments" EntitySet="appointments" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="divisions">
@@ -1341,6 +1373,28 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="appointments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tm_id" Type="Int32" Nullable="false" />
+          <Property Name="appDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="realDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="treatment_plan" Relationship="cdentalModel.FK_appointments_tmplan" FromRole="appointments" ToRole="treatment_plan" />
+        </EntityType>
+        <Association Name="FK_appointments_tmplan">
+          <End Type="cdentalModel.treatment_plan" Role="treatment_plan" Multiplicity="1" />
+          <End Type="cdentalModel.appointments" Role="appointments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="treatment_plan">
+              <PropertyRef Name="tm_id" />
+            </Principal>
+            <Dependent Role="appointments">
+              <PropertyRef Name="tm_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1583,6 +1637,16 @@
                 <ScalarProperty Name="rp_pacid" ColumnName="rp_pacid" />
                 <ScalarProperty Name="rp_prid" ColumnName="rp_prid" />
                 <ScalarProperty Name="rp_id" ColumnName="rp_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="appointments">
+            <EntityTypeMapping TypeName="cdentalModel.appointments">
+              <MappingFragment StoreEntitySet="appointments">
+                <ScalarProperty Name="realDate" ColumnName="realDate" />
+                <ScalarProperty Name="appDate" ColumnName="appDate" />
+                <ScalarProperty Name="tm_id" ColumnName="tm_id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
