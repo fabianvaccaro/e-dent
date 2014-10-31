@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="76ae5d4e-a9e7-493e-b6f3-36b18482dd10" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:11106/patientManagement.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="patientManagement.xsd" MetadataType="Schema" ID="6afed5bf-ab7e-4f6d-892d-1c7dbd684a83" SourceId="1" SourceUrl="http://localhost:11106/patientManagement.svc?xsd=xsd2" />
+    <MetadataFile FileName="patientManagement.disco" MetadataType="Disco" ID="a71bb5e4-4f75-4ff8-8da2-64d0bbf17ca6" SourceId="1" SourceUrl="http://localhost:11106/patientManagement.svc?disco" />
+    <MetadataFile FileName="patientManagement1.xsd" MetadataType="Schema" ID="13c245be-cacc-458f-a527-2fe1d17a4caf" SourceId="1" SourceUrl="http://localhost:11106/patientManagement.svc?xsd=xsd0" />
+    <MetadataFile FileName="patientManagement.wsdl" MetadataType="Wsdl" ID="0326b44f-72d5-4c92-aaa2-0573d1dc8fa7" SourceId="1" SourceUrl="http://localhost:11106/patientManagement.svc?wsdl" />
+    <MetadataFile FileName="patientManagement2.xsd" MetadataType="Schema" ID="e70e52a5-8670-4f9b-b303-06dae010f704" SourceId="1" SourceUrl="http://localhost:11106/patientManagement.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

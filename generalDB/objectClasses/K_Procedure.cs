@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
+using System.Web;
 using System.Threading.Tasks;
 
 namespace generalDB.objectClasses
 {
     [DataContract]
     [Serializable]
-    class K_Procedure
+    public class K_Procedure
     {
         [DataMember]
         public Int32 ID { get; set; }

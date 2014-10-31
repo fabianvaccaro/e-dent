@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:11106/patientManagement.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/generalDB.objectClasses" />
+  <xs:element name="DoWork">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoWorkResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPatientByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPatientByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/generalDB.objectClasses" minOccurs="0" name="getPatientByIDResult" nillable="true" type="q1:K_Patient" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="registerPatient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CED" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LASTN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BORN" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="PHONE1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PHONE2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ADDRESS" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="JOB" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SCHOOL" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ENSUR" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DIVID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="registerPatientResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="registerPatientResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

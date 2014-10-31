@@ -1,10 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
     <siteMapNode url="~/Default.aspx" title="Inicio"  description="Inicio">
-      <siteMapNode title="Atención al público">
-        <siteMapNode title="Pacientes">
+      <siteMapNode title="Panel principal" url="~/main/main.aspx">
+        <siteMapNode title="Atención al público" url="~/main/workstation/main.aspx">
+        <siteMapNode title="Pacientes" url="~/main/workstation/patients/main.aspx">
           <siteMapNode title="Ingreso de nuevo paciente">
             <siteMapNode url="" title="Datos de afiliación"  description="" />
+          </siteMapNode>
+          <siteMapNode title="Calendario">
+            <siteMapNode title="Citas para"></siteMapNode>
+          </siteMapNode>
+          <siteMapNode title="Buscar paciente"></siteMapNode>
+          <siteMapNode title="Registro unificado">
+            <siteMapNode title="Editar datos de afiliación"></siteMapNode>
             <siteMapNode url="" title="Historia clínica general"  description="">
               <siteMapNode url="" title="Historia médica"  description="" />
               <siteMapNode url="" title="Estado dentario"  description="" />
@@ -18,13 +26,6 @@
                 <siteMapNode url="" title="Test de mezcla"  description="" />
               </siteMapNode>
             </siteMapNode>
-          </siteMapNode>
-          <siteMapNode title="Calendario">
-            <siteMapNode title="Citas para"></siteMapNode>
-          </siteMapNode>
-          <siteMapNode title="Buscar paciente"></siteMapNode>
-          <siteMapNode title="Registro unificado">
-            <siteMapNode title="Editar datos de afiliación"></siteMapNode>
             <siteMapNode title="Diagnósticos">
               <siteMapNode title="Nuevo diagnóstico"></siteMapNode>
             </siteMapNode>
@@ -42,7 +43,7 @@
           </siteMapNode>
         </siteMapNode>     
       </siteMapNode>
-      <siteMapNode title="Administración">
+        <siteMapNode title="Administración">
         <siteMapNode title="Institución"></siteMapNode>
         <siteMapNode title="Talento humano">
           <siteMapNode title="Buscar"></siteMapNode>
@@ -55,6 +56,8 @@
           <siteMapNode title="Ingresar informe de inventario"></siteMapNode>
         </siteMapNode>
       </siteMapNode>
+      </siteMapNode>
+      
         <siteMapNode url="" title="Modulos"  description="" />
         <siteMapNode url="" title=""  description="" />
     </siteMapNode>

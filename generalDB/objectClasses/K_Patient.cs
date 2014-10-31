@@ -203,7 +203,7 @@ namespace generalDB.objectClasses
             }
         }
         //add record to database
-        public Boolean addRecord()
+        public Int32 addRecord()
         {
             using (cdentalEntities context = new cdentalEntities())
             {
@@ -229,21 +229,22 @@ namespace generalDB.objectClasses
                         context.patient.Add(patientObj);
                         context.SaveChanges();
                         ESTATS = "Correcto";
+                        return patientObj.pac_id;
                         
                     }
                     else
                     {
                         ESTATS = "El DNI seleccionado ya existe";
-                        return false;
+                        return 0;
                     }
                     
                 }
                 catch(Exception e)
                 {
                     ESTATS = e.ToString();
-                    return false;
+                    return 0;
                 }
-                return true;
+                return patientObj.pac_id;
             }
         }
 
