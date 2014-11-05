@@ -212,6 +212,7 @@
     <Content Include="main\workstation\main.aspx" />
     <Content Include="main\workstation\patients\main.aspx" />
     <Content Include="main\workstation\patients\new_affiliation.aspx" />
+    <Content Include="main\workstation\patients\testpace2.aspx" />
     <Content Include="main\workstation\patients\unified_record.aspx" />
     <Content Include="packages.config" />
     <Content Include="Properties\DataSources\generalDB.objectClasses.K_Patient.datasource" />
@@ -367,6 +368,13 @@
     </Compile>
     <Compile Include="main\workstation\patients\new_affiliation.aspx.designer.cs">
       <DependentUpon>new_affiliation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main\workstation\patients\testpace2.aspx.cs">
+      <DependentUpon>testpace2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\workstation\patients\testpace2.aspx.designer.cs">
+      <DependentUpon>testpace2.aspx</DependentUpon>
     </Compile>
     <Compile Include="main\workstation\patients\unified_record.aspx.cs">
       <DependentUpon>unified_record.aspx</DependentUpon>

@@ -88,6 +88,15 @@
     <Compile Include="medicines.cs">
       <DependentUpon>cdental_model.tt</DependentUpon>
     </Compile>
+    <Compile Include="objectClasses\Decision.cs" />
+    <Compile Include="objectClasses\D_Instrumento.cs" />
+    <Compile Include="objectClasses\D_Paso.cs" />
+    <Compile Include="objectClasses\D_PasoMedicacion.cs" />
+    <Compile Include="objectClasses\D_PasoMedicion.cs" />
+    <Compile Include="objectClasses\D_PasoOperativo.cs" />
+    <Compile Include="objectClasses\D_PasoVigilancia.cs" />
+    <Compile Include="objectClasses\D_Protocol.cs" />
+    <Compile Include="objectClasses\D_RegMedicion.cs" />
     <Compile Include="objectClasses\K_clinHistory.cs" />
     <Compile Include="objectClasses\K_Medicines.cs" />
     <Compile Include="objectClasses\K_Operator.cs" />
@@ -104,6 +113,7 @@
     <Compile Include="objectClasses\K_Speciality.cs" />
     <Compile Include="objectClasses\K_Treatment.cs" />
     <Compile Include="objectClasses\K_TrPlan.cs" />
+    <Compile Include="objectClasses\Simple.cs" />
     <Compile Include="op.cs" />
     <Compile Include="operators.cs">
       <DependentUpon>cdental_model.tt</DependentUpon>
