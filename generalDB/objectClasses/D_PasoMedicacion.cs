@@ -30,6 +30,7 @@ namespace generalDB.objectClasses
             Dosis = 0;
             Intervalo = 0;
             Duracion = 0;
+            TipoElemento = 4;
         }
     }
 }

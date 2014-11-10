@@ -16,13 +16,25 @@ namespace e_dent.main.workstation.patients
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            generalDB.objectClasses.Simple pasoSimple = new generalDB.objectClasses.Simple();
+            generalDB.objectClasses.D_Protocol prinks = new generalDB.objectClasses.D_Protocol();
 
-            
-            
+            generalDB.objectClasses.D_PasoOperativo opera = new generalDB.objectClasses.D_PasoOperativo();
 
 
-            System.Diagnostics.Debug.WriteLine("SomeText");
+            List<generalDB.objectClasses.D_Paso> listaPasos = new List<generalDB.objectClasses.D_Paso>();
+            listaPasos.Add(prinks.AddPasoOperativo());
+
+            var a = (
+                from s in listaPasos
+                where s.ProtocoloID == prinks.UID
+                select new
+                {
+                    s
+                }).FirstOrDefault();
+
+            listaPasos.Add(a.s.AddPasoOperativo());
+
+            System.Diagnostics.Debug.WriteLine(prinks.UID + "  ---   " + a.s.ProtocoloID);
         }
     }
 }

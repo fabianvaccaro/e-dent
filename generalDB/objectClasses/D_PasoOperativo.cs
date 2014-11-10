@@ -23,7 +23,7 @@ namespace generalDB.objectClasses
         {
             Pausa = 0;
             UbicacionID = 0;
-
+            TipoElemento = 1;
         }
     }
 }

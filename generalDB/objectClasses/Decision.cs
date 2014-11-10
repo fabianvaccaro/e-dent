@@ -12,15 +12,15 @@ namespace generalDB.objectClasses
     public class Decision:D_Paso
     {
         [DataMember]
-        Int32 Campo1 { get; set; }
+        public Int32 Campo1 { get; set; }
         [DataMember]
-        Int32 Campo2 { get; set; }
+        public Int32 Campo2 { get; set; }
         [DataMember]
-        Int32 Campo3 { get; set; }
+        public Int32 Campo3 { get; set; }
         [DataMember]
-        String VERDADERO_ID { get; set; }
+        public String VERDADERO_ID { get; set; }
         [DataMember]
-        String FALSO_ID { get; set; }
+        public String FALSO_ID { get; set; }
 
         //constructor general
         public Decision()
@@ -30,6 +30,7 @@ namespace generalDB.objectClasses
             Campo3 = 0;
             VERDADERO_ID =String.Empty;
             FALSO_ID = String.Empty;
+            TipoElemento = 5;
         }
 
     }

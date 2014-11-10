@@ -13,15 +13,13 @@ namespace generalDB.objectClasses
     {
         [DataMember]
         public String ParametroID { get; set; }
-        [DataMember]
-        public String InstrumentoID { get; set; }
 
-        //constructor general
+        //constructor
         public D_PasoMedicion()
         {
             ParametroID = String.Empty;
             InstrumentoID = String.Empty;
-
+            TipoElemento = 2;
         }
 
     }

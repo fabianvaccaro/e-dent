@@ -18,6 +18,7 @@ namespace generalDB.objectClasses
         public D_PasoVigilancia()
         {
             Duracion = 0;
+            TipoElemento = 3;
         }
     }
 }

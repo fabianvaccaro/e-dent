@@ -29,7 +29,8 @@ namespace generalDB.objectClasses
         [DataMember]
         public String Documentacion { get; set; }
 
-
+        [DataMember]
+        public String Nombre { get; set; }
 
         //constructor general
         public D_Protocol()
@@ -40,59 +41,45 @@ namespace generalDB.objectClasses
             Privado = true;
             Detalle = String.Empty;
             Documentacion = String.Empty;
+            Nombre = String.Empty;
         }
-
-        D_Paso inicializar(D_Paso objeto)
-        {
-             objeto.ProtocoloID = UID;
-             objeto.SubProtocoloID = Guid.NewGuid().ToString("N");
-             objeto.PREV_ID = "starter";
-             return objeto;
+        //funcion genérica de inicialización de pasos
+        T inicializar<T>(T value) where T : D_Paso{
+            value.SubProtocoloID = Guid.NewGuid().ToString("N");
+            value.ProtocoloID = UID;
+            value.nivel = 1;
+            return value;
         }
+        
 
          public D_PasoMedicion AddMedicion()
          {
              D_PasoMedicion step = new D_PasoMedicion();
-             step.ProtocoloID = UID;
-             step.SubProtocoloID = Guid.NewGuid().ToString("N");
-             step.PREV_ID = "starter";
-             return step;
+             return inicializar<D_PasoMedicion>(step);
          }
 
          public D_PasoOperativo AddPasoOperativo()
          {
              D_PasoOperativo step = new D_PasoOperativo();
-             step.ProtocoloID = UID;
-             step.SubProtocoloID = Guid.NewGuid().ToString("N");
-             step.PREV_ID = "starter";
-             return step;
+             return inicializar<D_PasoOperativo>(step);
          }
 
-         public D_PasoMedicacion AddPasoMedicion()
+         public D_PasoMedicacion AddPasoMedicacion()
          {
              D_PasoMedicacion step = new D_PasoMedicacion();
-             step.ProtocoloID = UID;
-             step.SubProtocoloID = Guid.NewGuid().ToString("N");
-             step.PREV_ID = "starter";
-             return step;
+             return inicializar<D_PasoMedicacion>(step);
          }
 
          public D_PasoVigilancia AddPasoVigilancia()
          {
              D_PasoVigilancia step = new D_PasoVigilancia();
-             step.ProtocoloID = UID;
-             step.SubProtocoloID = Guid.NewGuid().ToString("N");
-             step.PREV_ID = "starter";
-             return step;
+             return inicializar<D_PasoVigilancia>(step);
          }
 
          public Decision addDecision()
          {
              Decision step = new Decision();
-             step.ProtocoloID = UID;
-             step.SubProtocoloID = Guid.NewGuid().ToString("N");
-             step.PREV_ID = "starter";
-             return step;
+             return inicializar<Decision>(step);
          }
 
     }

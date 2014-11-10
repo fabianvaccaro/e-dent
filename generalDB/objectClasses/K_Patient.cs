@@ -244,7 +244,7 @@ namespace generalDB.objectClasses
                     ESTATS = e.ToString();
                     return 0;
                 }
-                return patientObj.pac_id;
+                //return patientObj.pac_id;
             }
         }
 
