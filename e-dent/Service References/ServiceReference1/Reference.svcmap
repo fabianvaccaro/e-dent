@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="76ae5d4e-a9e7-493e-b6f3-36b18482dd10" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="90ba83e0-a07b-44a2-975d-384e3ea79b5f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:11106/patientManagement.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="patientManagement.xsd" MetadataType="Schema" ID="6afed5bf-ab7e-4f6d-892d-1c7dbd684a83" SourceId="1" SourceUrl="http://localhost:11106/patientManagement.svc?xsd=xsd2" />
-    <MetadataFile FileName="patientManagement.disco" MetadataType="Disco" ID="a71bb5e4-4f75-4ff8-8da2-64d0bbf17ca6" SourceId="1" SourceUrl="http://localhost:11106/patientManagement.svc?disco" />
-    <MetadataFile FileName="patientManagement1.xsd" MetadataType="Schema" ID="13c245be-cacc-458f-a527-2fe1d17a4caf" SourceId="1" SourceUrl="http://localhost:11106/patientManagement.svc?xsd=xsd0" />
-    <MetadataFile FileName="patientManagement.wsdl" MetadataType="Wsdl" ID="0326b44f-72d5-4c92-aaa2-0573d1dc8fa7" SourceId="1" SourceUrl="http://localhost:11106/patientManagement.svc?wsdl" />
-    <MetadataFile FileName="patientManagement2.xsd" MetadataType="Schema" ID="e70e52a5-8670-4f9b-b303-06dae010f704" SourceId="1" SourceUrl="http://localhost:11106/patientManagement.svc?xsd=xsd1" />
+    <MetadataFile FileName="patientManagement.xsd" MetadataType="Schema" ID="9bc1c229-f528-41c1-9ab6-101f421e48e2" SourceId="1" SourceUrl="http://localhost:11106/patientManagement.svc?xsd=xsd2" />
+    <MetadataFile FileName="patientManagement.disco" MetadataType="Disco" ID="3fc11c9d-61e8-40c9-a7eb-ef43782e308a" SourceId="1" SourceUrl="http://localhost:11106/patientManagement.svc?disco" />
+    <MetadataFile FileName="patientManagement1.xsd" MetadataType="Schema" ID="e8a64dde-a148-4494-8146-6017427b2c7f" SourceId="1" SourceUrl="http://localhost:11106/patientManagement.svc?xsd=xsd0" />
+    <MetadataFile FileName="patientManagement.wsdl" MetadataType="Wsdl" ID="0195a57d-a9a7-4135-aadd-bf5c39b37a05" SourceId="1" SourceUrl="http://localhost:11106/patientManagement.svc?wsdl" />
+    <MetadataFile FileName="patientManagement2.xsd" MetadataType="Schema" ID="7f1d48ee-7c7b-4f97-ace5-50271a796493" SourceId="1" SourceUrl="http://localhost:11106/patientManagement.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

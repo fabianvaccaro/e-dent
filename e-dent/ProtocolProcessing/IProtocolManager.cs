@@ -5,11 +5,11 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 
-namespace core_service
+namespace e_dent.ProtocolProcessing
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IprotocolDesigner" in both code and config file together.
+    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IProtocolManager" in both code and config file together.
     [ServiceContract]
-    public interface IprotocolDesigner
+    public interface IProtocolManager
     {
         [OperationContract]
         void DoWork();
@@ -25,6 +25,5 @@ namespace core_service
 
         [OperationContract]
         String pruebaSesion(Int32 coge);
-
     }
 }

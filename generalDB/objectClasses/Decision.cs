@@ -17,19 +17,16 @@ namespace generalDB.objectClasses
         public Int32 Campo2 { get; set; }
         [DataMember]
         public Int32 Campo3 { get; set; }
-        [DataMember]
-        public String VERDADERO_ID { get; set; }
-        [DataMember]
-        public String FALSO_ID { get; set; }
 
-        //constructor general
+
+        /// <summary>
+        /// Decision
+        /// </summary>
         public Decision()
         {
             Campo1 = 0;
             Campo2 = 0;
             Campo3 = 0;
-            VERDADERO_ID =String.Empty;
-            FALSO_ID = String.Empty;
             TipoElemento = 5;
         }
 

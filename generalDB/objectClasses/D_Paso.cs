@@ -32,6 +32,13 @@ namespace generalDB.objectClasses
         public Boolean tieneHijos { get; set; }
         [DataMember]
         public Int32 TipoElemento { get; set; }
+        //A peticion de Yesnier
+        [DataMember]
+        public String VERDADERO_ID { get; set; }
+        [DataMember]
+        public String FALSO_ID { get; set; }
+        [DataMember]
+        public String EstrategiaID { get; set; }
 
         //constructor general
         public D_Paso()
@@ -43,6 +50,9 @@ namespace generalDB.objectClasses
             Observaciones = String.Empty;
             nivel = 0;
             tieneHijos = false;
+            VERDADERO_ID = "null";
+            FALSO_ID = "null";
+            EstrategiaID = "null";
         }
 
         //Generación de objetos concatenados

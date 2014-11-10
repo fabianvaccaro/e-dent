@@ -98,6 +98,7 @@
     <Compile Include="objectClasses\D_Protocol.cs" />
     <Compile Include="objectClasses\D_RegMedicion.cs" />
     <Compile Include="objectClasses\D_Step_Con.cs" />
+    <Compile Include="objectClasses\D_Strategy.cs" />
     <Compile Include="objectClasses\D_VaMonit.cs" />
     <Compile Include="objectClasses\K_clinHistory.cs" />
     <Compile Include="objectClasses\K_Medicines.cs" />

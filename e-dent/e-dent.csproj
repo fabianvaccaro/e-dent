@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -208,15 +209,19 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\plusSign.png" />
+    <Content Include="Images\plusSignSmall.png" />
     <Content Include="main\main.aspx" />
     <Content Include="main\workstation\main.aspx" />
     <Content Include="main\workstation\patients\main.aspx" />
     <Content Include="main\workstation\patients\new_affiliation.aspx" />
+    <Content Include="main\workstation\patients\testControl1.ascx" />
     <Content Include="main\workstation\patients\testpace2.aspx" />
     <Content Include="main\workstation\patients\unified_record.aspx" />
     <Content Include="packages.config" />
     <Content Include="Properties\DataSources\generalDB.objectClasses.K_Patient.datasource" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="ProtocolProcessing\ProtocolManager.svc" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
@@ -369,6 +374,13 @@
     <Compile Include="main\workstation\patients\new_affiliation.aspx.designer.cs">
       <DependentUpon>new_affiliation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="main\workstation\patients\testControl1.ascx.cs">
+      <DependentUpon>testControl1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\workstation\patients\testControl1.ascx.designer.cs">
+      <DependentUpon>testControl1.ascx</DependentUpon>
+    </Compile>
     <Compile Include="main\workstation\patients\testpace2.aspx.cs">
       <DependentUpon>testpace2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -384,6 +396,10 @@
       <DependentUpon>unified_record.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProtocolProcessing\IProtocolManager.cs" />
+    <Compile Include="ProtocolProcessing\ProtocolManager.svc.cs">
+      <DependentUpon>ProtocolManager.svc</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

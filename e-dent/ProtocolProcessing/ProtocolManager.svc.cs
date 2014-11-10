@@ -7,19 +7,16 @@ using System.ServiceModel;
 using System.Text;
 using System.Web;
 
-namespace core_service
+namespace e_dent.ProtocolProcessing
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "protocolDesigner" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select protocolDesigner.svc or protocolDesigner.svc.cs at the Solution Explorer and start debugging.
-    public class protocolDesigner : IprotocolDesigner
+    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "ProtocolManager" in code, svc and config file together.
+    // NOTE: In order to launch WCF Test Client for testing this service, please select ProtocolManager.svc or ProtocolManager.svc.cs at the Solution Explorer and start debugging.
+    public class ProtocolManager : IProtocolManager
     {
         public void DoWork()
         {
         }
-        /// <summary>
-        /// Inicia el Protocol Manager
-        /// </summary>
-        /// <param name="UserID">Id del usuario activo</param>
+
         public void iniciarProtocolManager(String UserID = "usuarioBeta")
         {
             List<generalDB.objectClasses.D_Protocol> lstp = new List<generalDB.objectClasses.D_Protocol>();
@@ -65,7 +62,7 @@ namespace core_service
         //Encapsulado de la lista de conexiones activas para el usuario
         public List<generalDB.objectClasses.D_Step_Con> listaConexiones
         {
-             get
+            get
             {
                 return (List<generalDB.objectClasses.D_Step_Con>)HttpContext.Current.Session["listaConexiones"];
             }
@@ -75,7 +72,7 @@ namespace core_service
             }
         }
         //Encapslado de la lista de estrategias activas para el usuario
-        public List<D_Strategy>listaEstrategias
+        public List<D_Strategy> listaEstrategias
         {
             get
             {
@@ -97,7 +94,7 @@ namespace core_service
         {
             generalDB.objectClasses.D_Step_Con conn = new generalDB.objectClasses.D_Step_Con();
             conn.conectar(Paso1, Paso2);
-            
+
             return conn;
         }
 
@@ -108,7 +105,7 @@ namespace core_service
         /// <returns>Retorna el ID del protocolo nuevo</returns>
         public String nuevoProtocolo(String UserID = "usuarioBeta")
         {
-            
+
 
             generalDB.objectClasses.D_Protocol proto = new generalDB.objectClasses.D_Protocol();
             listaProtocolos.Add(proto);
@@ -137,7 +134,7 @@ namespace core_service
                      }).FirstOrDefault();
 
 
-            
+
             //Determina la estrategia a la que pertenece el paso
             if (PadreID.Equals("initial"))
             {
@@ -147,7 +144,7 @@ namespace core_service
                 nuevaEstrategia.ProtocoloID = ProtocoloID;
                 Estrategia = nuevaEstrategia.UID;
                 listaEstrategias.Add(nuevaEstrategia);
-                
+
             }
             else
             {
@@ -163,7 +160,7 @@ namespace core_service
                 //establece el ID de estrategia como el registrado en el paso padre
                 Estrategia = pasoPadre.EstrategiaID;
             }
-            
+
 
             //inserta un nuevo paso en la lista          
             //ADVERTENCIA : switch importante, no tocar, si lo tocas la máquina estalla, muchos muertos, no tocar
@@ -215,12 +212,12 @@ namespace core_service
                 }
                 pasoPadre.tieneHijos = true;
             }
-           
+
 
             //retorna el UID del paso insertado
             return pasoCreado.UID;
 
-            
+
         }
 
         public String pruebaSesion(Int32 coge)
@@ -244,7 +241,7 @@ namespace core_service
                     aaa = "no funciono";
                 }
             }
-            
+
 
             return aaa;
         }
