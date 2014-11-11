@@ -13,10 +13,10 @@ namespace e_dent.main.workstation.patients
         {
             ProtocolProcessing.ProtocolManager Prott = new ProtocolProcessing.ProtocolManager();
             Prott.iniciarProtocolManager("usuarioBeta");
-            //String IdProtocolo = String.Empty;
-            //IdProtocolo = Prott.nuevoProtocolo("usuarioBeta");
-            //hid_protocoloID.Value = IdProtocolo;
-            Button1.Text = Prott.pruebaSesion(1);
+            String IdProtocolo = String.Empty;
+            IdProtocolo = Prott.nuevoProtocolo("usuarioBeta");
+            hid_protocoloID.Value = IdProtocolo;
+            Button1.Text = "Añadir elemento";
             
         }
 
@@ -26,24 +26,12 @@ namespace e_dent.main.workstation.patients
             String PasoID = String.Empty;
             PasoID = Prott.insertarPaso(1,hid_protocoloID.Value,"initial",true);
 
+            testControl1 nctrl = (testControl1)LoadControl("~/main/workstation/patients/controls/testControl1.ascx");
+            nctrl.UID = PasoID;
 
-            testControl1 nuevoTestControl = new testControl1();
-            nuevoTestControl.UID = PasoID;
-
-            Panel1.Controls.Add(nuevoTestControl);
-            
-            
-            
-
-            
+            Panel1.Controls.Add(nctrl);
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            ProtocolProcessing.ProtocolManager Prott = new ProtocolProcessing.ProtocolManager();
-            Button2.Text = Prott.pruebaSesion(0);
-
-            
-        }
+        
     }
 }

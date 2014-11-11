@@ -13,6 +13,15 @@ namespace e_dent.main.workstation.patients {
     public partial class testControl1 {
         
         /// <summary>
+        /// Table1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table Table1;
+        
+        /// <summary>
         /// lbl_nombrePaso control.
         /// </summary>
         /// <remarks>
@@ -29,23 +38,5 @@ namespace e_dent.main.workstation.patients {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_descripcion;
-        
-        /// <summary>
-        /// PasoSeleccionado control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox PasoSeleccionado;
-        
-        /// <summary>
-        /// btn_nuevoPaso control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btn_nuevoPaso;
     }
 }

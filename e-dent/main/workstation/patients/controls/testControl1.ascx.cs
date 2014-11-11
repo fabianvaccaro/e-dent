@@ -9,9 +9,23 @@ namespace e_dent.main.workstation.patients
 {
     public partial class testControl1 : System.Web.UI.UserControl
     {
-        public String UID = "";
-        public String Descripcion = null;
-        public Boolean Seleccionado = false;
+        public String UID;
+        public String Descripcion;
+        public Boolean Seleccionado;
+
+        public testControl1()
+        {
+            Label lbl_nombrePaso = new Label();
+            TextBox txt_descripcion = new TextBox();
+            CheckBox PasoSeleccionado = new CheckBox();
+            ImageButton btn_nuevoPaso = new ImageButton();
+            Descripcion = null;
+            Seleccionado = false;
+            UID = String.Empty;
+
+
+            
+        }
          
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,10 +37,6 @@ namespace e_dent.main.workstation.patients
 
         }
 
-        protected void txt_descripcion_TextChanged(object sender, EventArgs e)
-        {
-            Descripcion = txt_descripcion.Text;
-        }
 
 
 

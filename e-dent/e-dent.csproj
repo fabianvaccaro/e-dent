@@ -215,7 +215,7 @@
     <Content Include="main\workstation\main.aspx" />
     <Content Include="main\workstation\patients\main.aspx" />
     <Content Include="main\workstation\patients\new_affiliation.aspx" />
-    <Content Include="main\workstation\patients\testControl1.ascx" />
+    <Content Include="main\workstation\patients\controls\testControl1.ascx" />
     <Content Include="main\workstation\patients\testpace2.aspx" />
     <Content Include="main\workstation\patients\unified_record.aspx" />
     <Content Include="packages.config" />
@@ -374,11 +374,11 @@
     <Compile Include="main\workstation\patients\new_affiliation.aspx.designer.cs">
       <DependentUpon>new_affiliation.aspx</DependentUpon>
     </Compile>
-    <Compile Include="main\workstation\patients\testControl1.ascx.cs">
+    <Compile Include="main\workstation\patients\controls\testControl1.ascx.cs">
       <DependentUpon>testControl1.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="main\workstation\patients\testControl1.ascx.designer.cs">
+    <Compile Include="main\workstation\patients\controls\testControl1.ascx.designer.cs">
       <DependentUpon>testControl1.ascx</DependentUpon>
     </Compile>
     <Compile Include="main\workstation\patients\testpace2.aspx.cs">
