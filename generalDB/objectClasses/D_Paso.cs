@@ -11,6 +11,7 @@ namespace generalDB.objectClasses
     [Serializable]
     public class D_Paso
     {
+        
         [DataMember]
         public String UID { get; set; }
 
@@ -34,11 +35,15 @@ namespace generalDB.objectClasses
         public Int32 TipoElemento { get; set; }
         //A peticion de Yesnier
         [DataMember]
+        public String SIGUIENTE_ID { get; set; }
+        [DataMember]
         public String VERDADERO_ID { get; set; }
         [DataMember]
         public String FALSO_ID { get; set; }
         [DataMember]
         public String EstrategiaID { get; set; }
+        [DataMember]
+        public String BloqueInst { get; set; }
 
         //constructor general
         public D_Paso()
@@ -50,9 +55,11 @@ namespace generalDB.objectClasses
             Observaciones = String.Empty;
             nivel = 0;
             tieneHijos = false;
-            VERDADERO_ID = "null";
-            FALSO_ID = "null";
-            EstrategiaID = "null";
+            SIGUIENTE_ID = "vacio";
+            VERDADERO_ID = "vacio";
+            FALSO_ID = "vacio";
+            EstrategiaID = "vacio";
+            BloqueInst = String.Empty;
         }
 
         //Generación de objetos concatenados
@@ -61,8 +68,9 @@ namespace generalDB.objectClasses
         {
             value.ProtocoloID = ProtocoloID;
             value.SubProtocoloID = SubProtocoloID;
-            value.nivel = nivel + 1;
+            value.nivel = 1;
             tieneHijos = true;
+            SIGUIENTE_ID = value.UID;
             return value;
         }
 

@@ -12,6 +12,8 @@ namespace e_dent.main.workstation.patients
         public String UID;
         public String Descripcion;
         public Boolean Seleccionado;
+        
+        
 
         public testControl1()
         {
@@ -23,7 +25,9 @@ namespace e_dent.main.workstation.patients
             Seleccionado = false;
             UID = String.Empty;
 
+            txt_descripcion.Text = "hola";
 
+            
             
         }
          
@@ -35,6 +39,10 @@ namespace e_dent.main.workstation.patients
         protected void PasoSeleccionado_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+        protected void tclick(object sender, EventArgs e)
+        {
+            footBtn.Visible = false;
         }
 
 

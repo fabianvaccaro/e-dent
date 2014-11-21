@@ -1,41 +1,9 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="testControl1.ascx.cs" Inherits="e_dent.main.workstation.patients.testControl1" %>
-<style type="text/css">
-    .pasoSt
-    {
-        width : 200px;
-        border : solid;
-        border-color : black;
-        border-style : solid;
-        margin-bottom : 5px;
-        padding-bottom : 5px;
-    }
-    .lol1
-    {
-        padding-bottom : 2px;
-        padding-top : 2px;
-        padding-left : 5px;
-        padding-right: 5px;
-        vertical-align : bottom;
-        
+<%-- Los controles deben colocarse dentro de un directorio llamado "controls" junto con el CSS para que puedan ser renderizados en el navegador --%>
+<link rel="stylesheet" type="text/css" href="protocolDesigner.css" id="EstiloControles" runat="server"/>
 
-    }
-    .lol2
-    {
-        padding-bottom : 5px;
-        padding-top : 0px;
-        padding-left : 5px;
-        padding-right: 5px;
-        vertical-align : top;
-        text-align : center;
-        height : 100px;
-    }
-    .textoDescripcion
-    {
-        height : 80px;
-        font-size: small;
-        width : 95%;
-        resize : none;
-    }
+<style type="text/css" media="screen">
+    @import "./controls/protocolDesigner.css";
 </style>
 
 <asp:Table ID="Table1" runat="server" CssClass =" pasoSt">
@@ -50,4 +18,13 @@
         </asp:TableCell>
     </asp:TableRow>
 </asp:Table>
+<asp:Table ID="footBtn" runat="server"  CssClass="tbFoot">
+    <asp:TableRow runat="server">
+        <asp:TableCell runat="server" CssClass="tbCell">
+            <asp:ImageButton runat="server" ImageUrl="~/Images/bt_nuevoPaso.png" ImageAlign="Top" BorderWidth="0px" Width="80px" Height="20px" CssClass="btnPuerco" OnClick="tclick"/>
+            <%--<asp:Image runat="server" ImageUrl="~/Images/bt_nuevoPaso.png" ImageAlign="Top" />--%>
+        </asp:TableCell>
+    </asp:TableRow>
+</asp:Table>
+
 

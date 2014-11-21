@@ -47,7 +47,7 @@ namespace generalDB.objectClasses
         T inicializar<T>(T value) where T : D_Paso{
             value.SubProtocoloID = Guid.NewGuid().ToString("N");
             value.ProtocoloID = UID;
-            value.nivel = 1;
+            value.nivel = 0;
             return value;
         }
         

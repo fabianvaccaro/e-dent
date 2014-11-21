@@ -193,7 +193,9 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Images\accent.png" />
+    <Content Include="Images\bt_nuevoPaso.png" />
     <Content Include="Images\bullet.png" />
+    <Content Include="Images\flechabaja.png" />
     <Content Include="Images\heroAccent.png" />
     <Content Include="Images\logo1.png" />
     <Content Include="Images\orderedList0.png" />
@@ -211,21 +213,32 @@
     <Content Include="Global.asax" />
     <Content Include="Images\plusSign.png" />
     <Content Include="Images\plusSignSmall.png" />
+    <Content Include="Images\uno.png" />
+    <Content Include="Images\zero.png" />
     <Content Include="main\main.aspx" />
     <Content Include="main\workstation\main.aspx" />
+    <Content Include="main\workstation\patients\controls\CapsulaCtrl.ascx" />
+    <Content Include="main\workstation\patients\controls\DecisionCtrl.ascx" />
+    <Content Include="main\workstation\patients\controls\DetalleCtrl.ascx" />
+    <Content Include="main\workstation\patients\controls\PasoMedicionCtrl.ascx" />
+    <Content Include="main\workstation\patients\controls\PasoOperativoCtrl.ascx" />
+    <Content Include="main\workstation\patients\controls\protocolDesigner.css" />
     <Content Include="main\workstation\patients\main.aspx" />
     <Content Include="main\workstation\patients\new_affiliation.aspx" />
     <Content Include="main\workstation\patients\controls\testControl1.ascx" />
+    <Content Include="main\workstation\patients\protocol_desingerMain.aspx" />
+    <Content Include="main\workstation\patients\pruebaGrid.aspx" />
     <Content Include="main\workstation\patients\testpace2.aspx" />
+    <Content Include="main\workstation\patients\textpage3.aspx" />
     <Content Include="main\workstation\patients\unified_record.aspx" />
     <Content Include="packages.config" />
     <Content Include="Properties\DataSources\generalDB.objectClasses.K_Patient.datasource" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
-    <Content Include="ProtocolProcessing\ProtocolManager.svc" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.imagemapster.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
@@ -360,6 +373,41 @@
     <Compile Include="main\workstation\main.aspx.designer.cs">
       <DependentUpon>main.aspx</DependentUpon>
     </Compile>
+    <Compile Include="main\workstation\patients\controls\CapsulaCtrl.ascx.cs">
+      <DependentUpon>CapsulaCtrl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\workstation\patients\controls\CapsulaCtrl.ascx.designer.cs">
+      <DependentUpon>CapsulaCtrl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="main\workstation\patients\controls\DecisionCtrl.ascx.cs">
+      <DependentUpon>DecisionCtrl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\workstation\patients\controls\DecisionCtrl.ascx.designer.cs">
+      <DependentUpon>DecisionCtrl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="main\workstation\patients\controls\DetalleCtrl.ascx.cs">
+      <DependentUpon>DetalleCtrl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\workstation\patients\controls\DetalleCtrl.ascx.designer.cs">
+      <DependentUpon>DetalleCtrl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="main\workstation\patients\controls\PasoMedicionCtrl.ascx.cs">
+      <DependentUpon>PasoMedicionCtrl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\workstation\patients\controls\PasoMedicionCtrl.ascx.designer.cs">
+      <DependentUpon>PasoMedicionCtrl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="main\workstation\patients\controls\PasoOperativoCtrl.ascx.cs">
+      <DependentUpon>PasoOperativoCtrl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\workstation\patients\controls\PasoOperativoCtrl.ascx.designer.cs">
+      <DependentUpon>PasoOperativoCtrl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="main\workstation\patients\main.aspx.cs">
       <DependentUpon>main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -381,12 +429,33 @@
     <Compile Include="main\workstation\patients\controls\testControl1.ascx.designer.cs">
       <DependentUpon>testControl1.ascx</DependentUpon>
     </Compile>
+    <Compile Include="main\workstation\patients\protocol_desingerMain.aspx.cs">
+      <DependentUpon>protocol_desingerMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\workstation\patients\protocol_desingerMain.aspx.designer.cs">
+      <DependentUpon>protocol_desingerMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main\workstation\patients\pruebaGrid.aspx.cs">
+      <DependentUpon>pruebaGrid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\workstation\patients\pruebaGrid.aspx.designer.cs">
+      <DependentUpon>pruebaGrid.aspx</DependentUpon>
+    </Compile>
     <Compile Include="main\workstation\patients\testpace2.aspx.cs">
       <DependentUpon>testpace2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="main\workstation\patients\testpace2.aspx.designer.cs">
       <DependentUpon>testpace2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main\workstation\patients\textpage3.aspx.cs">
+      <DependentUpon>textpage3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main\workstation\patients\textpage3.aspx.designer.cs">
+      <DependentUpon>textpage3.aspx</DependentUpon>
     </Compile>
     <Compile Include="main\workstation\patients\unified_record.aspx.cs">
       <DependentUpon>unified_record.aspx</DependentUpon>
@@ -396,10 +465,7 @@
       <DependentUpon>unified_record.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ProtocolProcessing\IProtocolManager.cs" />
-    <Compile Include="ProtocolProcessing\ProtocolManager.svc.cs">
-      <DependentUpon>ProtocolManager.svc</DependentUpon>
-    </Compile>
+    <Compile Include="ProtocolProcessing\ProtocolDesignerTools.cs" />
     <Compile Include="Service References\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace e_dent.main.workstation.patients {
+namespace e_dent.main.workstation.patients.controls {
     
     
-    public partial class testControl1 {
+    public partial class PasoMedicionCtrl {
         
         /// <summary>
         /// EstiloControles control.
@@ -22,39 +22,48 @@ namespace e_dent.main.workstation.patients {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl EstiloControles;
         
         /// <summary>
-        /// Table1 control.
+        /// organizador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table1;
+        protected global::System.Web.UI.WebControls.Table organizador;
         
         /// <summary>
-        /// lbl_nombrePaso control.
+        /// txt_variableMedida control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_nombrePaso;
+        protected global::System.Web.UI.WebControls.TextBox txt_variableMedida;
         
         /// <summary>
-        /// txt_descripcion control.
+        /// txt_valor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_descripcion;
+        protected global::System.Web.UI.WebControls.TextBox txt_valor;
         
         /// <summary>
-        /// footBtn control.
+        /// lbl_detalle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table footBtn;
+        protected global::System.Web.UI.WebControls.Label lbl_detalle;
+        
+        /// <summary>
+        /// btn_editarDetalle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_editarDetalle;
     }
 }

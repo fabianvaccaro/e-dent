@@ -18,12 +18,15 @@ namespace generalDB.objectClasses
         [DataMember]
         public Int32 UbicacionID { get; set; }
 
+        [DataMember]
+        public String Actividad { get; set; }
 
         public D_PasoOperativo()
         {
             Pausa = 0;
             UbicacionID = 0;
             TipoElemento = 1;
+            Actividad = String.Empty;
         }
     }
 }

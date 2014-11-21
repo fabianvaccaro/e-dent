@@ -10,7 +10,7 @@
 namespace e_dent.main.workstation.patients {
     
     
-    public partial class testControl1 {
+    public partial class protocol_desingerMain {
         
         /// <summary>
         /// EstiloControles control.
@@ -22,39 +22,57 @@ namespace e_dent.main.workstation.patients {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl EstiloControles;
         
         /// <summary>
-        /// Table1 control.
+        /// disenadorID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table1;
+        protected global::System.Web.UI.WebControls.HiddenField disenadorID;
         
         /// <summary>
-        /// lbl_nombrePaso control.
+        /// btn_testPaso control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_nombrePaso;
+        protected global::System.Web.UI.WebControls.Button btn_testPaso;
         
         /// <summary>
-        /// txt_descripcion control.
+        /// designer_organizer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_descripcion;
+        protected global::System.Web.UI.WebControls.Table designer_organizer;
         
         /// <summary>
-        /// footBtn control.
+        /// pnl_multivisor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table footBtn;
+        protected global::System.Web.UI.WebControls.Panel pnl_multivisor;
+        
+        /// <summary>
+        /// Panel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel1;
+        
+        /// <summary>
+        /// MIPLACE control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder MIPLACE;
     }
 }

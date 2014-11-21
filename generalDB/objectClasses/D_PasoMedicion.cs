@@ -12,14 +12,16 @@ namespace generalDB.objectClasses
     public class D_PasoMedicion:Simple
     {
         [DataMember]
-        public String ParametroID { get; set; }
+        public String VariableMedida { get; set; }
+        public String ValorMedido { get; set; }
 
         //constructor
         public D_PasoMedicion()
         {
-            ParametroID = String.Empty;
+            VariableMedida = String.Empty;
             InstrumentoID = String.Empty;
             TipoElemento = 2;
+            ValorMedido = String.Empty;
         }
 
     }

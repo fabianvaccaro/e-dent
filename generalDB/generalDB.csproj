@@ -89,6 +89,7 @@
       <DependentUpon>cdental_model.tt</DependentUpon>
     </Compile>
     <Compile Include="objectClasses\Decision.cs" />
+    <Compile Include="objectClasses\D_Designer.cs" />
     <Compile Include="objectClasses\D_Instrumento.cs" />
     <Compile Include="objectClasses\D_Paso.cs" />
     <Compile Include="objectClasses\D_PasoMedicacion.cs" />
